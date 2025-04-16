@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/pages/home.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+    />
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__logo">
+        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+      </div>
+
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="#" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
+            </a>
+            <div class="navbar__text-links">
+              <a href="#">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">SIGN IN</a>
+            </div>
+          </div>
+
+          <nav class="navbar__center">
+            <a href="#" class="navbar__link navbar__link--active">GATE</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CEMETERY</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CATACOMBS</a>
+          </nav>
+        </div>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <div class="header__icons-bottom">
+            <span class="cemetery-label">Animals cemetery</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- weather modal -->
+    <div id="weatherModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Day / Night</h2>
+        <div class="day-night-options">
+          <img src="assets/img/weather/Sun.png" alt="Day" />
+          <img src="assets/img/weather/Moon.png" alt="Night" />
+        </div>
+
+        <h2>Weather</h2>
+        <div class="weather-options">
+          <img src="assets/img/weather/Sun.png" alt="Sunny" />
+          <img src="assets/img/weather/Rain.png" alt="Rain" />
+          <img src="assets/img/weather/Snow.png" alt="Snow" />
+          <img src="assets/img/weather/Storm.png" alt="Storm" />
+        </div>
+
+        <button id="closeModalBtn">SAVE AND CLOSE</button>
+      </div>
+    </div>
+    <!-- overlay night-->
+    <div id="nightOverlay" class="night-overlay hidden"></div>
+
+    <!-- sky -->
+    <div class="weather-effect weather-effect--rainy"></div>
+    <div class="sky sky--day">
+      <img src="./assets/img/sky/birds.gif" alt="Birds" class="sky__birds" />
+    </div>
+
+    <div class="page-main__interior"></div>
+    <main class="page-main page-main--background">
+      <!-- mobile -->
+      <div class="mobile-menu">
+        <button><i class="fa-solid fa-landmark"></i> Go to Cemetery</button>
+        <button><i class="fa-solid fa-torii-gate"></i> Go to Catacombs</button>
+        <button><i class="fa-solid fa-eye"></i> Information board</button>
+        <button><i class="fa-solid fa-paw"></i> Animals cemetery</button>
+      </div>
+
+      <!-- text trong background -->
+      <div class="image-card-left">
+        <div class="image-card__image-wrapper">
+          <img
+            src="./assets/img/text/tablica_informacyjna.png"
+            class="image-card__image"
+          />
+          <div class="image-card__icons">
+            <button class="icon-button"><i class="fa-solid fa-eye"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-card-right">
+        <div class="image-card__image-wrapper">
+          <img
+            src="./assets/img/text/cmentarz_zwierzat.png"
+            class="image-card__image"
+          />
+          <div class="image-card__icons">
+            <button class="icon-button"><i class="fa-solid fa-paw"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-main__leaf-left"></div>
+      <div class="page-main__leaf-right"></div>
+      <div class="page-main__leaf-bottom"></div>
+
+      <div class="door-wrapper">
+        <div class="page-main__left-door"></div>
+        <div class="page-main__right-door"></div>
+      </div>
+
+      <div class="page-main__floor"></div>
+      <div class="page-main__panel page-main__panel--left"></div>
+      <div class="page-main__panel page-main__panel--right"></div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer__links">
+        <a href="#">ABOUT US</a>
+        <span class="footer__divider">|</span>
+        <a href="#">TERMS OF SERVICE</a>
+        <span class="footer__divider">|</span>
+        <a href="#">LEGAL ASPECT</a>
+        <span class="footer__divider">|</span>
+        <a href="#">PRICE LIST</a>
+        <span class="footer__divider">|</span>
+        <a href="#">PSP</a>
+        <span class="footer__divider">|</span>
+        <a href="#">HISTORY</a>
+        <span class="footer__divider">|</span>
+        <a href="#">AFFILIATION</a>
+        <span class="footer__divider">|</span>
+        <a href="#">CONTACT</a>
+        <span class="footer__social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </span>
+      </div>
+      <p class="footer__copyright">
+        All right reserved Virtual Grave &copy; 2025. Design and implementation
+        Cyber.pl
+      </p>
+    </footer>
+    <script>
+      // doors
+      const leftDoor = document.querySelector(".page-main__left-door");
+      const rightDoor = document.querySelector(".page-main__right-door");
+      const doorWrapper = document.querySelector(".door-wrapper");
+
+      doorWrapper.addEventListener("click", () => {
+        leftDoor.classList.add("open");
+        rightDoor.classList.add("open");
+        document
+          .querySelector(".page-main--background")
+          .classList.add("zooming");
+        setTimeout(() => {
+          window.location.href = "catacombs-gate.html";
+        }, 1000);
+      });
+    </script>
+    <script src="./assets/scripts/weather.js"></script>
+  </body>
+</html>
