@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
     <title>Virtual Graveyard</title>
-    <link rel="stylesheet" href="./assets/style/global.css" />
-    <link rel="stylesheet" href="./assets/style/components/formRLF.css" />
-    <link rel="stylesheet" href="./assets/style/components/header.css" />
-    <link rel="stylesheet" href="./assets/style/components/footer.css" />
     <link
       rel="stylesheet"
       href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
   </head>
   <body class="page">
+    <!-- Header-->
     <header class="header">
       <a href="./home.html" class="header__logo">
         <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
@@ -60,57 +61,11 @@
       </div>
     </header>
 
-    <main class="auth">
-      <div class="auth__wrapper">
-        <h1 class="auth__title">Sign in</h1>
-      </div>
-      <div class="auth__wrapper">
-        <p class="auth__subtitle">Log in using your email and password:</p>
-      </div>
-      <div class="auth__wrapper">
-        <form class="auth__form">
-          <div class="auth__field">
-            <div class="auth__input-wrapper">
-              <i class="fa-solid fa-envelope"></i>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                class="auth__input"
-                required
-              />
-            </div>
-          </div>
-          <div class="auth__field">
-            <div class="auth__input-wrapper">
-              <i class="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                class="auth__input"
-                required
-              />
-            </div>
-          </div>
+    <main class="main">
+      <h1 class="title">Psp</h1>
 
-          <div class="auth__actions">
-            <a href="./PasswordReset.html" class="auth__link"
-              >FORGOT PASSWORD?</a
-            >
-            <button type="submit" class="auth__button">SIGN IN</button>
-          </div>
-        </form>
-      </div>
-
-      <div class="auth__divider">
-        <span class="auth__divider-text">OR</span>
-      </div>
-
-      <div class="auth__footer">
-        <a href="./register.html" class="auth__button auth__button--secondary"
-          >SIGN UP</a
-        >
+      <div class="contain">
+        <img class="content__img" src="./assets/img/footer/cert.png" alt="" />
       </div>
     </main>
 

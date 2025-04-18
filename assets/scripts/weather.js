@@ -7,6 +7,7 @@ const sky = document.querySelector(".sky");
 const weatherEffect = document.querySelector(".weather-effect");
 const pageMain = document.querySelector(".page-main");
 const skyBird = document.querySelector(".sky__birds");
+const floor = document.getElementById("floor");
 
 // ===== Hiệu ứng mưa =====
 function createRain() {
@@ -41,7 +42,7 @@ function createLightning() {
   if (!document.querySelector(".lightning")) {
     const lightning = document.createElement("div");
     lightning.className = "lightning";
-    lightning.classList.add('flash');
+    lightning.classList.add("flash");
     sky.appendChild(lightning);
   }
 
@@ -65,7 +66,9 @@ function createLightning() {
 
 // ===== Dọn sạch hiệu ứng thời tiết =====
 function removeWeatherEffects() {
-  document.querySelectorAll(".rain-drop, .snow-flake").forEach((e) => e.remove());
+  document
+    .querySelectorAll(".rain-drop, .snow-flake")
+    .forEach((e) => e.remove());
   document.querySelector(".lightning")?.remove();
   document.querySelector(".lightning-bolt")?.remove();
 }
@@ -107,7 +110,15 @@ function applyWeatherState() {
     if (isHomePage) {
       pageMain.classList.remove("page-main--background");
       pageMain.classList.add("page-main--snow");
+      // Chuyển floor sang nền tuyết
+      if (floor) {
+        floor.classList.remove("page-main__floor");
+        floor.classList.add("page-main__floor--snow");
+      }
     }
+  }else{
+    floor.classList.add("page-main__floor");
+    floor.classList.remove("page-main__floor--snow");
   }
 
   if (weatherType === "Storm") {
@@ -135,7 +146,9 @@ const weatherIcons = document.querySelectorAll(".modal-content img");
 weatherIcons.forEach((img) => {
   img.addEventListener("click", () => {
     const group = img.parentElement;
-    group.querySelectorAll("img").forEach((i) => i.classList.remove("selected"));
+    group
+      .querySelectorAll("img")
+      .forEach((i) => i.classList.remove("selected"));
     img.classList.add("selected");
   });
 });

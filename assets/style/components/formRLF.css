@@ -10,18 +10,15 @@ body {
   background-color: #000;
   color: #333;
   line-height: 1.6;
-  padding: 20px;
 }
 
 /* BEM Blocks */
 .auth {
   max-width: 600px;
-  max-height: 600px;
   margin: 50px auto;
   background: #1e1e1e;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow-x: auto;
 }
 
 .auth__wrapper {
