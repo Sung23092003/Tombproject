@@ -20,3 +20,17 @@ body {
 .night {
   background: #000; 
 }
+
+/* overlay night */
+.night-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;                               
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}                                                     

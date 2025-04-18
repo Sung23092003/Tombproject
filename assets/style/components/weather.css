@@ -1,0 +1,173 @@
+/* Thêm hiệu ứng mưa */
+@keyframes rainDrop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Định dạng giọt mưa */
+.rain-drop {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: rgba(39, 111, 178, 0.7);
+  animation: rainDrop linear infinite;
+  opacity: 0;
+  z-index: 6;
+}
+
+/* Khi có mưa, tạo nhiều giọt mưa */
+.sky-rain {
+  position: relative;
+  overflow: hidden;
+}
+
+.sky-rain .rain-drop {
+  animation-duration: 2s; /* Tốc độ rơi */
+  animation-delay: calc(
+    0.1s * var(--i)
+  ); /* Đặt độ trễ để giọt mưa xuất hiện tại thời gian khác nhau */
+  opacity: 1;
+}
+
+/* tuyết */
+@keyframes snowFall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.snow-flake {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snowFall linear infinite;
+  z-index: 6;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.sky-snow {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Hiệu ứng chớp */
+@keyframes flashLightning {
+  0%, 90%, 100% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0;
+  }
+}
+
+.lightning {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lightning.flash {
+  animation: flashLightning 4s ease-in-out infinite; /* giật 2 lần mỗi 4s */
+}
+
+
+/* Khi có bão, tạo hiệu ứng mưa và sấm */
+.sky-rain .lightning {
+  display: block;
+  opacity: 1;
+}
+
+/* tia chớp */
+/*giả lập bằng clip-path */
+.lightning-bolt {
+  position: absolute;
+  width: 2px;
+  height: 180px;
+  background: linear-gradient(to bottom, #ffffe0, #ffffff);
+  top: 10vh;
+  left: 50%;
+  z-index: 11;
+  transform: translateX(-50%) rotate(5deg);
+  opacity: 0;
+  pointer-events: none;
+  box-shadow:
+    0 0 20px rgba(255, 255, 150, 0.8),
+    0 0 40px rgba(255, 255, 100, 0.6),
+    0 0 60px rgba(255, 255, 255, 0.5);
+  filter: blur(0.4px);
+  z-index: 0;
+}
+
+/* Nhánh nhỏ bên cạnh tia chính */
+.lightning-branch {
+  position: absolute;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, #ffffe0, #ffffff);
+  top: 30%;
+  left: 0;
+  transform: rotate(-35deg);
+  box-shadow: 0 0 10px rgba(255, 255, 100, 0.6);
+}
+
+/* Tạo nhánh khác */
+.lightning-bolt .branch-1 {
+  top: 40px;
+  left: -10px;
+  transform: rotate(-25deg);
+}
+
+.lightning-bolt .branch-2 {
+  top: 80px;
+  left: 10px;
+  transform: rotate(30deg);
+}
+
+.lightning-bolt.flash {
+  animation: boltFlash 0.25s ease-in-out;
+}
+
+@keyframes boltFlash {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) rotate(5deg) scaleY(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(5deg) scaleY(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) rotate(5deg) scaleY(0.9);
+  }
+}

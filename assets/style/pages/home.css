@@ -1,18 +1,3 @@
-/* overlay night */
-.night-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.5; 
-  z-index: 9999;
-  pointer-events: none; 
-  transition: opacity 0.3s ease;
-}
-
-
 /* sky */
 .sky--day {
   background: url("../../img/sky/day-nomal.png") repeat-x top center;
@@ -24,6 +9,40 @@
   left: 0;
   z-index: -1;
   animation: skyScroll 60s linear infinite;
+}
+
+/* night */
+.sky--night {
+  background: url("../../img/sky/night-nomal.png") repeat-x top center;
+  background-size: auto 100%;
+  width: 200vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sky-rain{
+  background: url("../../img/sky/day-rainy.png") repeat-x top center;
+  background-size: auto 100%;
+  width: 200vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: skyScroll 60s linear infinite;
+}
+
+.sky-snow{
+  background: url("../../img/sky/day-snow.png") repeat-x top center;
+  background-size: auto 100%;
+  width: 200vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .sky {
@@ -40,6 +59,7 @@
   height: auto;
   object-fit: contain;
 }
+
 
 /* main */
 
@@ -120,12 +140,29 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("../../img/background/sciana.png") no-repeat center center fixed;
+  background: url("../../img/background/sciana.png") no-repeat center center
+    fixed;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.page-main--snow {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("../../img/background/sciana_snow.png") no-repeat center center
+    fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /*inner  */
 .page-main__interior {
@@ -263,6 +300,16 @@
 }
 
 .page-main--background.zooming {
+  transform: scale(3.5);
+  transform-origin: center center;
+}
+
+/* snow */
+.page-main--snow {
+  transition: transform 3s;
+}
+
+.page-main--snow.zooming {
   transform: scale(3.5);
   transform-origin: center center;
 }

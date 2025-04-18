@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/formRLF.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+    />
+  </head>
+  <body class="page">
+    <header class="header">
+      <a href="./home.html" class="header__logo">
+        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+      </a>
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="#" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
+            </a>
+            <div class="navbar__text-links">
+              <a href="#">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="./login.html">SIGN IN</a>
+            </div>
+          </div>
+
+          <nav class="navbar__center">
+            <a href="#" class="navbar__link navbar__link--active">GATE</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CEMETERY</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CATACOMBS</a>
+          </nav>
+        </div>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <div class="header__icons-bottom">
+            <span class="cemetery-label">Animals cemetery</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth">
+      <div class="auth__wrapper">
+        <div class="auth__wrapper">
+          <h1 class="auth__title">Register</h1>
+        </div>
+        <p class="auth__subtitle">
+          Please provide all necessary information required for registration
+          process:
+        </p>
+
+        <form class="auth__form">
+          <div class="auth__field">
+            <div class="auth__input-wrapper">
+              <i class="fa-solid fa-user"></i>
+              <input
+                type="text"
+                class="auth__input"
+                placeholder="Name*"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="auth__field">
+            <div class="auth__input-wrapper">
+              <i class="fa-solid fa-user"></i>
+              <input
+                type="text"
+                class="auth__input"
+                placeholder="Surname*"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="auth__field">
+            <div class="auth__input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input
+                type="email"
+                class="auth__input"
+                placeholder="Email*"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="auth__field">
+            <div class="auth__input-wrapper">
+              <i class="fa-solid fa-phone"></i>
+              <input
+                type="number"
+                class="auth__input"
+                placeholder="Phone"
+                required
+              />
+            </div>
+          </div>
+          
+          <div class="auth__field">
+            <div class="auth__input-wrapper">
+              <i class="fa-solid fa-key"></i>
+              <input
+                type="password"
+                class="auth__input"
+                placeholder="Password*"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="auth__field">
+            <div class="auth__input-wrapper">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                class="auth__input"
+                placeholder="Repeat password*"
+                required
+              />
+            </div>
+          </div>
+          <div class="auth__wrapper">
+          <div class="auth__checkbox-group">
+            <div class="auth__checkbox">
+              <input type="checkbox" id="tos" required />
+              <label for="tos" class="auth__checkbox-label"
+                >I accept <span class="link">Terms of Service</span><span class="auth__required"
+                  >*</span
+                ></label
+              >
+            </div>
+
+            <div class="auth__checkbox">
+              <input type="checkbox" id="offers" checked />
+              <label for="offers" class="auth__checkbox-label"
+                >Consent to receive notifications about new offers (not more
+                often than once a quarter)</label
+              >
+            </div>
+
+            <div class="auth__checkbox">
+              <input type="checkbox" id="comments" checked />
+              <label for="comments" class="auth__checkbox-label"
+                >Consent for comment notifications</label
+              >
+            </div>
+          </div>
+          </div>
+
+          <div class="auth__actions jus-center">
+            <button type="submit" class="auth__button mr-0">REGISTER</button>
+          </div>
+        </form>
+
+        <div class="auth__divider">
+          <span class="auth__divider-text">OR</span>
+        </div>
+
+        <div class="auth__footer">
+          <a href="./login.html" class="auth__button auth__button--secondary">SIGN IN</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer__links">
+        <a href="#">ABOUT US</a>
+        <span class="footer__divider">|</span>
+        <a href="#">TERMS OF SERVICE</a>
+        <span class="footer__divider">|</span>
+        <a href="#">LEGAL ASPECT</a>
+        <span class="footer__divider">|</span>
+        <a href="#">PRICE LIST</a>
+        <span class="footer__divider">|</span>
+        <a href="#">PSP</a>
+        <span class="footer__divider">|</span>
+        <a href="#">HISTORY</a>
+        <span class="footer__divider">|</span>
+        <a href="#">AFFILIATION</a>
+        <span class="footer__divider">|</span>
+        <a href="#">CONTACT</a>
+        <span class="footer__social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </span>
+      </div>
+      <p class="footer__copyright">
+        All right reserved Virtual Grave &copy; 2025. Design and implementation
+        Cyber.pl
+      </p>
+    </footer>
+  </body>
+</html>
