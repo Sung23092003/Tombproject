@@ -1,3 +1,54 @@
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-32 {
+  margin-top: 32px !important ;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.opacity-6 {
+  opacity: 0.6;
+}
+
+.jsnone {
+  justify-content: unset !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.align-center{
+  align-items: center !important;
+}
+
+.img-size-s{
+  max-width: 300px;
+  height: 150px;
+}
+
+.img-size-m{
+  max-width: 1000px;
+  height: 500px;
+}
+
+
 body {
   background-color: #000;
 }
