@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
     <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
+    <link rel="stylesheet" href="./assets/style/components/store.css" />
     <link
       rel="stylesheet"
       href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
-    <link rel="stylesheet" href="./assets/style/global.css" />
-    <link rel="stylesheet" href="./assets/style/components/header.css" />
-    <link rel="stylesheet" href="./assets/style/components/footer.css" />
-    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
   </head>
   <body class="page">
-    <!-- Header-->
     <header class="header">
       <a href="./home.html" class="header__logo">
         <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
@@ -23,7 +24,7 @@
       <div class="header__right">
         <div class="header__menu">
           <div class="navbar__top-row">
-            <a href="./new-burial.html" class="navbar__btn">
+            <a href="#" class="navbar__btn">
               <span class="navbar__btn-icon">+</span> NEW FUNERAL
             </a>
             <div class="navbar__text-links">
@@ -36,7 +37,9 @@
           </div>
 
           <nav class="navbar__center">
-            <a href="./home.html" class="navbar__link navbar__link--active">GATE</a>
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
             <span class="navbar__divider">|</span>
             <a href="#" class="navbar__link">BOARD</a>
             <span class="navbar__divider">|</span>
@@ -61,11 +64,77 @@
       </div>
     </header>
 
-    <main class="main">
-      <h1 class="title">Psp</h1>
+    <main class="page-main main night mt-50">
+      <div class="flex wrap">
+        <div class="title mr-100">Store: People</div>
+        <div class="steps flex gap-lg">
+          <div class="step active">
+            <span class="step__number">1</span>
+            <p class="step__des mt-16">Souvenir</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 2 -->
+          <div class="step">
+            <span class="step__number">2</span>
+            <p class="step__des mt-16">Deceased</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 3 -->
+          <div class="step">
+            <span class="step__number">3</span>
+            <p class="step__des mt-16">Memory</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 4 -->
+          <div class="step">
+            <span class="step__number">4</span>
+            <p class="step__des mt-16">Duration</p>
+          </div>
+        </div>
+      </div>
+      <h2 class="store__title text-white mt-32">
+        Choose a candle, flower or stone
+      </h2>
+      <div class="mt-16">
+        <section class="store-section">
+          <aside class="store-sidebar">
+            <button class="store-sidebar__button active">LIGHTS</button>
+            <button class="store-sidebar__button">FLOWERS</button>
+            <button class="store-sidebar__button">STONES</button>
+            <button class="store-sidebar__button">OTHER</button>
+          </aside>
 
-      <div class="contain">
-        <img class="content__img" src="./assets/img/footer/cert.png" alt="" />
+          <div class="store-content">
+            <h3 class="store-content__title">
+              Configure the inscription on the tomb
+            </h3>
+
+            <form class="store-form">
+              <div class="form-group">
+                <label for="familyName" class="form-label">Family name</label>
+                <input
+                  type="text"
+                  id="familyName"
+                  class="form-input"
+                  placeholder="Enter family name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="numberOfPlaces" class="form-label"
+                  >Number of places</label
+                >
+                <input
+                  type="number"
+                  id="numberOfPlaces"
+                  class="form-input"
+                  min="1"
+                  placeholder="Enter number of places"
+                />
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
     </main>
 

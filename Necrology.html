@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+  <title>Virtual Graveyard - Deceased</title>
+
+  <link rel="stylesheet" href="./assets/style/global.css" />
+  <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
+  <link rel="stylesheet" href="./assets/style/components/header.css" />
+  <link rel="stylesheet" href="./assets/style/components/footer.css" />
+  <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
+  <link rel="stylesheet" href="./assets/style/pages/Necrology.css" />
+  <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css" />
+</head>
+
+<body class="page">
+  <header class="header">
+    <a href="./home.html" class="header__logo">
+      <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+    </a>
+    <div class="header__right">
+      <div class="header__menu">
+        <div class="navbar__top-row">
+          <a href="#" class="navbar__btn">
+            <span class="navbar__btn-icon">+</span> NEW FUNERAL
+          </a>
+          <div class="navbar__text-links">
+            <a href="#">STORE</a>
+            <span class="navbar__divider">|</span>
+            <a href="#">WEATHER</a>
+            <span class="navbar__divider">|</span>
+            <a href="./login.html">SIGN IN</a>
+          </div>
+        </div>
+
+        <nav class="navbar__center">
+          <a href="./home.html" class="navbar__link navbar__link--active">GATE</a>
+          <span class="navbar__divider">|</span>
+          <a href="#" class="navbar__link">BOARD</a>
+          <span class="navbar__divider">|</span>
+          <a href="#" class="navbar__link">CEMETERY</a>
+          <span class="navbar__divider">|</span>
+          <a href="#" class="navbar__link">CATACOMBS</a>
+        </nav>
+      </div>
+
+      <div class="header__icons">
+        <div class="header__icons-top">
+          <button class="fa-solid fa-magnifying-glass"></button>
+          <button class="fa-solid fa-volume-high"></button>
+          <button title="Language">EN</button>
+        </div>
+        <div class="header__icons-bottom">
+          <span class="cemetery-label">Animals cemetery</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main main night mt-50">
+    <div class="flex wrap">
+      <div class="title mr-100">New funeral</div>
+      <div class="steps flex gap-lg">
+        <!-- các step như bạn đã có -->
+        <div class="step">
+          <span class="step__number">1</span>
+          <p class="step__des mt-16">Place</p>
+        </div>
+        <span class="steps_span">_</span>
+        <div class="step">
+          <span class="step__number">2</span>
+          <p class="step__des mt-16">Tombstone</p>
+        </div>
+        <span class="steps_span">_</span>
+        <div class="step">
+          <span class="step__number">3</span>
+          <p class="step__des mt-16">Deceased</p>
+        </div>
+        <span class="steps_span">_</span>
+        <div class="step active">
+          <span class="step__number">4</span>
+          <p class="step__des mt-16">Necrology</p>
+        </div>
+        <span class="steps_span">_</span>
+        <div class="step">
+          <span class="step__number">5</span>
+          <p class="step__des mt-16">Images</p>
+        </div>
+        <span class="steps_span">_</span>
+        <div class="step">
+          <span class="step__number">6</span>
+          <p class="step__des mt-16">Memory</p>
+        </div>
+        <span class="steps_span">_</span>
+        <div class="step">
+          <span class="step__number">7</span>
+          <p class="step__des mt-16">Summary</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="image-section__title text-white mt-32">Necrology</h2>
+    <div class="necrology flex render mt-32">
+      <!-- item 1 -->
+      <div class="flex-col w-half">
+        <div class="necrology__preview">Quick preview</div>
+        <img src="./assets/img/Necrology-img.png" class="necrology-img">
+        <div class="necrolygy__inner">
+          <p class="necrology__time">
+            On :month :day, :year, lived 0 years passed away
+          </p>
+          <p id="necrologyName" class="necrology__title mt-32">Name Surname "Other"</p>
+          <p class="necrology__des mt-32">
+            Beloved/Dear HUSBAND/DAD/GRANDPA after a long/short and serious
+            illness,<br /> bearing St. Sacraments, died suddenly/tragically/fell
+            asleep in the Lord
+          </p>
+          <p class="necrology__des mt-16">
+            THE HOLY MASS will be celebrated on (date) at (..) in the parish
+            church <br /> dedicated to (..)/the chapel in the cemetery (..), after
+            which the deceased <br /> will be escorted to his final resting place to
+            the cemetery (..) as reported <br /> by the bereaved
+          </p>
+          <p class="necrology__des mt-32">FAMILY</p>
+        </div>
+        <div class="necrology__qr">
+          <p>QR code</p>
+        </div>
+        </img>
+      </div>
+      <!-- item 2 -->
+      <section class="necrology__contain">
+        <div class="necrology__textTranform flex">
+          <p class="necrology__item">B</p>
+          <p class="necrology__item">I</p>
+          <p class="necrology__item underline">U</p>
+          <p class="necrology__item lineThrough">S</p>
+          <span></span>
+          <p class="necrology__item italic">I<span>x</span></p>
+        </div>
+
+        <div class="necrology__input">
+          <p>Beloved/Dear WIFE/MOM/GRANDMA after a long/short and serious illness, bearing St. Sacraments, died
+            suddenly/tragically/fell asleep in the Lord</p>
+          <p>THE HOLY MASS will be celebrated on (date) at (..) in the parish church dedicated to (..)/the chapel in the
+            cemetery (..), after which the deceased will be escorted to her final resting place to the cemetery (..) as
+            reported by the bereaved</p>
+          <p>THE HOLY MASS will be celebrated on (date) at (..) in the parish church dedicated to (..)/the chapel in the
+            cemetery (..), after which the deceased will be escorted to her final resting place to the cemetery (..) as
+            reported by the bereaved</p>
+          <p>FAMILY</p>
+        </div>
+
+        <div class="necrology__generated">
+          <p>If you want to see the real preview of the obituary that will be generated for printing, click the button
+            Generated image.</p>
+          <button>Generated image</button>
+        </div>
+      </section>
+    </div>
+
+    <div style="margin-bottom: 74px" class="form-footer w-full mt-32">
+      <a href="./deceased.html" class="form-footer__btn">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+      <a href="./funeral-img.html" class="form-footer__btn form-footer__btn--primary" id="nextBtn">
+        Next <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="footer__links">
+      <a href="./about-us.html">ABOUT US</a>
+      <span class="footer__divider">|</span>
+      <a href="./terms-of-service.html">TERMS OF SERVICE</a>
+      <span class="footer__divider">|</span>
+      <a href="./legal-aspect.html">LEGAL ASPECT</a>
+    </div>
+  </footer>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const deceasedData = JSON.parse(localStorage.getItem('deceasedData'));
+    
+    if (deceasedData && deceasedData.name && deceasedData.surname && deceasedData.other) {
+      document.getElementById('necrologyName').textContent = `${deceasedData.name} ${deceasedData.surname} "${deceasedData.other}"`;
+    }
+  });
+</script>
+
+
+<script src="./assets/scripts/footer.js"></script>
+
+</html>

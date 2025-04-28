@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
     <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
+    <link rel="stylesheet" href="./assets/style/pages/new-burial.css" />
     <link
       rel="stylesheet"
       href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
-    <link rel="stylesheet" href="./assets/style/global.css" />
-    <link rel="stylesheet" href="./assets/style/components/header.css" />
-    <link rel="stylesheet" href="./assets/style/components/footer.css" />
-    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
   </head>
   <body class="page">
-    <!-- Header-->
     <header class="header">
       <a href="./home.html" class="header__logo">
         <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
@@ -23,7 +24,7 @@
       <div class="header__right">
         <div class="header__menu">
           <div class="navbar__top-row">
-            <a href="./new-burial.html" class="navbar__btn">
+            <a href="#" class="navbar__btn">
               <span class="navbar__btn-icon">+</span> NEW FUNERAL
             </a>
             <div class="navbar__text-links">
@@ -61,11 +62,77 @@
       </div>
     </header>
 
-    <main class="main">
-      <h1 class="title">Psp</h1>
+    <main class="page-main main night mt-50">
+      <div class="flex wrap">
+        <div class="title mr-100">New funeral</div>
+        <div class="steps flex gap-lg">
+          <div class="step active">
+            <span class="step__number">1</span>
+            <p class="step__des mt-16">Place</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 2 -->
+          <div class="step">
+            <span class="step__number">2</span>
+            <p class="step__des mt-16">Tombstone</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 3 -->
+          <div class="step">
+            <span class="step__number">3</span>
+            <p class="step__des mt-16">Deceased</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 4 -->
+          <div class="step">
+            <span class="step__number">4</span>
+            <p class="step__des mt-16">Necrology</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 5 -->
+          <div class="step">
+            <span class="step__number">5</span>
+            <p class="step__des mt-16">Images</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 6 -->
+          <div class="step">
+            <span class="step__number">6</span>
+            <p class="step__des mt-16">Memory</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 7 -->
+          <div class="step">
+            <span class="step__number">7</span>
+            <p class="step__des mt-16">Summary</p>
+          </div>
+        </div>
+      </div>
+      <div class="image-section mt-16">
+        <h2 class="image-section__title">Burial place</h2>
 
-      <div class="contain">
-        <img class="content__img" src="./assets/img/footer/cert.png" alt="" />
+        <div class="image-section__gallery">
+          <a href="./Tombstone.html" class="image-section__block">
+            <div class="image-card">
+              <img src="./assets/img/new-burial/one.png" alt="Photo 1" />
+              <p class="image-card__caption">Cemetery</p>
+            </div>
+          </a>
+
+          <a href="./Tomb-family.html" class="image-section__block">
+            <div class="image-card">
+              <img src="./assets/img/new-burial/family.png" alt="Photo 2" />
+              <p class="image-card__caption">Family grave</p>
+            </div>
+          </a>
+
+          <a href="./catabombs.html" class="image-section__block">
+            <div class="image-card">
+              <img src="./assets/img/new-burial/catacom.png" alt="Photo 3" />
+              <p class="image-card__caption">Catacombs</p>
+            </div>
+          </a>
+        </div>
       </div>
     </main>
 

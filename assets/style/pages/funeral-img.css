@@ -1,0 +1,71 @@
+.funeral-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.upload-section {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.portrait-upload,
+.gallery-upload {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+.upload-box-xl {
+  min-height: 370px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.upload-box-xl,
+.upload-box {
+  border: 2px dashed #f9c94d;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f9c94d;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .upload-section {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .upload-box-xl,
+  .upload-box {
+    font-size: 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .upload-box-xl,
+  .upload-box {
+    font-size: 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

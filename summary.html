@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <title>Virtual Graveyard - Deceased</title>
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
+    <link rel="stylesheet" href="./assets/style/pages/summary.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+    />
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <a href="./home.html" class="header__logo">
+        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+      </a>
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="#" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
+            </a>
+            <div class="navbar__text-links">
+              <a href="#">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="./login.html">SIGN IN</a>
+            </div>
+          </div>
+
+          <nav class="navbar__center">
+            <a href="./home.html" class="navbar__link navbar__link--active">GATE</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CEMETERY</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CATACOMBS</a>
+          </nav>
+        </div>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <div class="header__icons-bottom">
+            <span class="cemetery-label">Animals cemetery</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main main night mt-50">
+      <div class="flex wrap">
+        <div class="title mr-100">New funeral</div>
+        <div class="steps flex gap-lg">
+          <div class="step">
+            <span class="step__number">1</span>
+            <p class="step__des mt-16">Place</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 2 -->
+          <div class="step">
+            <span class="step__number">2</span>
+            <p class="step__des mt-16">Tombstone</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 3 -->
+          <div class="step">
+            <span class="step__number">3</span>
+            <p class="step__des mt-16">Deceased</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 4 -->
+          <div class="step">
+            <span class="step__number">4</span>
+            <p class="step__des mt-16">Necrology</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 5 -->
+          <div class="step">
+            <span class="step__number">5</span>
+            <p class="step__des mt-16">Images</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 6 -->
+          <div class="step">
+            <span class="step__number">6</span>
+            <p class="step__des mt-16">Memory</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 7 -->
+          <div class="step active">
+            <span class="step__number">7</span>
+            <p class="step__des mt-16">Summary</p>
+          </div>
+        </div>
+      </div>
+      <h2 class="image-section__title text-white mt-32">Summary</h2>
+      <div class="flex render">
+        <div class="selected-tombstone mt-32">
+          <div class="image-card">
+            <img src="" alt="Selected Tombstone" id="tombstoneImage" />
+            <div id="tombstoneText" class="tombstone-text"></div>
+          </div>
+        </div>
+        <div class="render">
+          <div class="pay-section mt-32">
+            <div class="pay-cards">
+              <div class="pay-card selected">
+                <div class="pay-card__icon">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="pay-card__title">FOREVER</div>
+                <div class="pay-card__subtitle">Valid until 15.07.2053</div>
+                <div class="pay-card__price">€ 15</div>
+                <button class="pay-card__btn selected">CHOSEN ✓</button>
+              </div>
+
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="pay-card__title">12 MONTHS</div>
+                <div class="pay-card__subtitle">Valid until 29.04.2026</div>
+                <div class="pay-card__price">€ 2</div>
+                <button class="pay-card__btn">CHOOSE</button>
+              </div>
+
+              <div class="pay-card">
+                <div class="pay-card__icon">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="pay-card__title">36 MONTHS</div>
+                <div class="pay-card__subtitle">Valid until 27.04.2028</div>
+                <div class="pay-card__price">€ 3</div>
+                <button class="pay-card__btn">CHOOSE</button>
+              </div>
+            </div>
+
+            <div class="pay-form">
+              <label class="checkbox-container">
+                <input type="checkbox" checked />
+                <span class="checkmark"></span>
+                I accept <a class="link">Terms of Service *</a>
+              </label>
+
+              <label class="checkbox-container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                I want to receive a VAT invoice
+              </label>
+
+              <div class="pay-inputs">
+                <div class="pay-input">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" placeholder="Name*" />
+                </div>
+                <div class="pay-input">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" placeholder="Surname*" />
+                </div>
+                <div class="pay-input">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" placeholder="Email address*" />
+                </div>
+              </div>
+
+              <button class="pay-submit">PAY</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 74px" class="form-footer w-full mt-32">
+        <a href="./Memory.html" class="form-footer__btn">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </a>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer__links">
+        <a href="./about-us.html">ABOUT US</a>
+        <span class="footer__divider">|</span>
+        <a href="./terms-of-service.html">TERMS OF SERVICE</a>
+        <span class="footer__divider">|</span>
+        <a href="./legal-aspect.html">LEGAL ASPECT</a>
+        <span class="footer__divider">|</span>
+        <a href="./price-list.html">PRICE LIST</a>
+        <span class="footer__divider">|</span>
+        <a href="./psp.html">PSP</a>
+        <span class="footer__divider">|</span>
+        <a href="./history.html">HISTORY</a>
+        <span class="footer__divider">|</span>
+        <a href="./affilation.html">AFFILIATION</a>
+        <span class="footer__divider">|</span>
+        <a href="./contact.html">CONTACT</a>
+        <span class="footer__social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </span>
+      </div>
+      <p class="footer__copyright">
+        All right reserved Virtual Grave &copy; 2025. Design and implementation
+        Cyber.pl
+      </p>
+    </footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const deceasedData = JSON.parse(localStorage.getItem("deceasedData"));
+      const selectedTombstone = localStorage.getItem("selectedTombstone");
+      const portraitImage = localStorage.getItem("portraitImage");
+      const memoryData = JSON.parse(localStorage.getItem("memoryData"));
+      const galleryImages = JSON.parse(localStorage.getItem("galleryImages"));
+      const imageCard = document.querySelector(".image-card");
+
+      if (!imageCard) {
+        console.error("Không tìm thấy phần tử .image-card");
+        return;
+      }
+
+      // Xóa cũ
+      imageCard.innerHTML = "";
+
+      // Tạo container
+      const container = document.createElement("div");
+      container.style.display = "flex";
+      container.style.flexDirection = "column";
+      container.style.alignItems = "center";
+      container.style.gap = "20px";
+
+      // Tạo topRow chứa bia mộ và ảnh chân dung
+      const topRow = document.createElement("div");
+      topRow.style.display = "flex";
+      topRow.style.alignItems = "center";
+      topRow.style.gap = "20px";
+
+      // Tạo phần bia mộ
+      if (selectedTombstone && deceasedData) {
+        const tombstoneWrapper = document.createElement("div");
+        tombstoneWrapper.style.position = "relative";
+        tombstoneWrapper.style.width = "300px";
+        tombstoneWrapper.style.height = "auto";
+
+        const tombstoneImg = document.createElement("img");
+        tombstoneImg.src = selectedTombstone;
+        tombstoneImg.alt = "Tombstone Image";
+        tombstoneImg.style.width = "100%";
+        tombstoneImg.style.height = "auto";
+        tombstoneImg.style.display = "block";
+
+        const textOverlay = document.createElement("div");
+        textOverlay.className = "textOverlay";
+        const pronoun = deceasedData.gender === "male" ? "He" : "She";
+
+        textOverlay.innerHTML = `
+      <div style="font-size: 20px;">${deceasedData.name} ${deceasedData.surname}</div>
+<div style="font-size: 16px; margin-top: 20px;">Born: ${deceasedData.birthDate}</div>
+<div style="font-size: 16px; margin-top: 20px;">${pronoun} died on: ${deceasedData.deathDate}</div>
+    `;
+
+        tombstoneWrapper.appendChild(tombstoneImg);
+        tombstoneWrapper.appendChild(textOverlay);
+
+        // Thêm bia mộ vào topRow
+        topRow.appendChild(tombstoneWrapper);
+      }
+
+      // Thêm ảnh chân dung
+      if (portraitImage) {
+        const portraitImg = document.createElement("img");
+        portraitImg.src = portraitImage;
+        portraitImg.alt = "Portrait Image";
+        portraitImg.style.width = "250px";
+        portraitImg.style.height = "auto";
+        portraitImg.style.cursor = "pointer";
+        portraitImg.style.objectFit = "cover";
+        portraitImg.style.borderRadius = "8px";
+        topRow.appendChild(portraitImg);
+      }
+
+      // Thêm topRow vào container
+      container.appendChild(topRow);
+
+      // Thêm block giống MEMORY (bên dưới)
+      if (deceasedData) {
+        const tombstoneTextBlock = document.createElement("div");
+        tombstoneTextBlock.style.backgroundColor = "#1E1E1E";
+        tombstoneTextBlock.style.marginTop = "20px";
+        tombstoneTextBlock.style.width = "100%";
+        tombstoneTextBlock.style.padding = "27px 12px";
+        tombstoneTextBlock.style.color = "white";
+
+        const pronoun = deceasedData.gender === "male" ? "He" : "She";
+
+        tombstoneTextBlock.innerHTML = `
+      <div style="font-weight: 800; font-size: 20px; border-bottom: 1px solid #fff; padding: 6px 0;">
+        ${deceasedData.name} ${deceasedData.surname} "${
+          deceasedData.other || ""
+        }"
+      </div>
+      <div style="font-size: 18px; font-weight: 300; margin-top: 4px;">
+        Born: ${deceasedData.birthDate} | ${pronoun} died on: ${
+          deceasedData.deathDate
+        }
+      </div>
+    `;
+
+        container.appendChild(tombstoneTextBlock);
+      }
+
+      // Thêm MEMORY block
+      if (memoryData) {
+        const memoryBlock = document.createElement("div");
+        memoryBlock.style.backgroundColor = "#1E1E1E";
+        memoryBlock.style.marginTop = "20px";
+        memoryBlock.style.width = "100%";
+        memoryBlock.style.padding = "27px 12px";
+        memoryBlock.style.color = "white";
+
+        memoryBlock.innerHTML = `
+      <div style="font-weight: 800; font-size: 20px; border-bottom: 1px solid #fff; padding: 6px 0;">MEMORY</div>
+      <div style="font-size: 18px; font-weight: 300; margin-top: 8px;">
+        ${memoryData.memory}
+      </div>
+      <div style="font-size: 16px; font-style: italic; text-align: right; margin-top: 16px; ">
+        ${memoryData.signature}
+      </div>
+    `;
+
+        container.appendChild(memoryBlock);
+      }
+
+      // Thêm GALLERY block
+      if (galleryImages && galleryImages.length > 0) {
+        const galleryBlock = document.createElement("div");
+        galleryBlock.style.marginTop = "20px";
+        galleryBlock.style.width = "100%";
+        galleryBlock.style.padding = "27px 12px";
+        galleryBlock.style.color = "white";
+
+        const galleryTitle = document.createElement("div");
+        galleryTitle.style.fontSize = "20px";
+        galleryTitle.style.padding = "6px 0";
+        galleryTitle.style.fontWeight = "800";
+        galleryTitle.textContent = "GALLERY";
+        galleryBlock.appendChild(galleryTitle);
+
+        const galleryGrid = document.createElement("div");
+        galleryGrid.style.display = "grid";
+        galleryGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
+        galleryGrid.style.gap = "10px";
+        galleryGrid.style.marginTop = "12px";
+
+        galleryImages.forEach((imgSrc) => {
+          const imgWrapper = document.createElement("div");
+          imgWrapper.style.width = "100%";
+          imgWrapper.style.aspectRatio = "1 / 1";
+          imgWrapper.style.overflow = "hidden";
+          imgWrapper.style.borderRadius = "8px";
+
+          const img = document.createElement("img");
+          img.src = imgSrc;
+          img.alt = "Gallery Image";
+          img.style.width = "100%";
+          img.style.height = "100%";
+          img.style.objectFit = "cover";
+          img.style.display = "block";
+
+          imgWrapper.appendChild(img);
+          galleryGrid.appendChild(imgWrapper);
+        });
+
+        galleryBlock.appendChild(galleryGrid);
+        container.appendChild(galleryBlock);
+      }
+
+      // Cuối cùng append container vào imageCard
+      imageCard.appendChild(container);
+    });
+
+    // Xử lý chọn gói thanh toán
+    document.querySelectorAll(".pay-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        // Bỏ chọn tất cả thẻ trước đó
+        document.querySelectorAll(".pay-card").forEach((c) => {
+          c.classList.remove("selected");
+          c.querySelector(".pay-card__btn").classList.remove("selected");
+          c.querySelector(".pay-card__btn").textContent = "CHOOSE";
+        });
+
+        // Thêm class đã chọn
+        card.classList.add("selected");
+        const btn = card.querySelector(".pay-card__btn");
+        btn.classList.add("selected");
+        btn.textContent = "CHOSEN ✓";
+      });
+    });
+  </script>
+
+  <script src="./assets/scripts/footer.js"></script>
+</html>

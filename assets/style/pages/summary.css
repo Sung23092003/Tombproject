@@ -1,0 +1,174 @@
+.render {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+}
+
+.pay-section {
+  flex: 1;
+}
+
+.pay-form {
+  flex: 1;
+  margin-top: 0; 
+}
+
+/* Hover: đổi màu title */
+.pay-card:hover .pay-card__title {
+  color: #ffb400;
+}
+
+/* Đảm bảo màu viền vàng khi chọn */
+.pay-card.selected {
+  border-color: #ffb400;
+}
+
+/* Đảm bảo nút được tô vàng khi chọn */
+.pay-card__btn.selected {
+  background-color: #ffb400;
+  color: black;
+}
+
+
+.selected-tombstone,
+.pay-section {
+  flex: 1;
+  /* hoặc nếu muốn chắc chắn: */
+  /* width: 50%; */
+}
+
+.pay-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pay-card {
+  background-color: #1e1e1e;
+  padding: 24px 16px;
+  width: 200px;
+  text-align: center;
+  border: 2px solid #333;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.pay-card.selected {
+  border-color: #ffb400;
+}
+
+.pay-card__icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.pay-card__title {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.pay-card__subtitle {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #ccc;
+}
+
+.pay-card__price {
+  font-size: 20px;
+  margin: 12px 0;
+  color: white;
+}
+
+.pay-card__btn {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pay-card__btn.selected {
+  background-color: #ffb400;
+  color: black;
+}
+
+.textOverlay{
+  position: absolute;
+  bottom: 30%;
+  transform: translateY(50%);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #1d1d1d;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* item2 */
+.pay-form {
+  margin-top: 32px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.checkbox-container input {
+  accent-color: #ffb400;
+}
+
+.pay-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pay-input {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  gap: 8px;
+}
+
+.pay-input i {
+  color: #ffb400;
+}
+
+.pay-input input {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+}
+
+.pay-submit {
+  margin-top: 24px;
+  width: 100%;
+  background-color: #ffb400;
+  color: black;
+  border: none;
+  padding: 12px 0;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.link {
+  color: #eece8f;
+  cursor: pointer;
+  text-decoration: underline;
+}

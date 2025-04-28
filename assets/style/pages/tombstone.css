@@ -1,0 +1,51 @@
+/* --- Filter Dropdown Update --- */
+#filter-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+
+/* img */
+/* --- Image Section --- */
+
+.image-section__gallery {
+  width: 100%;
+}
+
+.image-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Space between items */
+}
+
+.image-section__block {
+  width: calc(20% - 32px); /* 5 items in a row by default */
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+.image-section__block.selected {
+  border-color: #eece8f;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1024px) {
+  .image-section__block {
+    width: calc(33.33% - 16px); /* 3 items in a row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .image-section__block {
+    width: calc(50% - 16px); /* 2 items in a row on smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-section__block {
+    width: 100%; /* 1 item in a row on mobile */
+  }
+}
