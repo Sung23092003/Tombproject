@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <link rel="icon" href="../assets/img/WC_Logo.png" type="image/png" />
     <title>Virtual Graveyard</title>
-    <link rel="stylesheet" href="./assets/style/global.css" />
-    <link rel="stylesheet" href="./assets/style/components/weather.css" />
-    <link rel="stylesheet" href="./assets/style/components/header.css" />
-    <link rel="stylesheet" href="./assets/style/components/footer.css" />
-    <link rel="stylesheet" href="./assets/style/pages/home.css" />
+    <link rel="stylesheet" href="./../assets/style/global.css" />
+    <link rel="stylesheet" href="./../assets/style/components/weather.css" />
+    <link rel="stylesheet" href="./../assets/style/components/header.css" />
+    <link rel="stylesheet" href="./../assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./../assets/style/pages/home.css" />
     <link
       rel="stylesheet"
-      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+      href="./../assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
   </head>
   <body class="page">
     <header class="header">
-      <div class="header__logo">
-        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
-      </div>
+      <a href="../home.html" class="header__logo">
+        <img src="./../assets/img/Animals/logo.png" alt="Virtual Grave Logo" />
+      </a>
       <div class="header__right">
         <div class="header__menu">
           <div class="navbar__top-row">
@@ -40,11 +40,9 @@
               >GATE</a
             >
             <span class="navbar__divider">|</span>
-            <a href="./board.html" class="navbar__link">BOARD</a>
+            <a  href="./board.html" class="navbar__link">BOARD</a>
             <span class="navbar__divider">|</span>
             <a href="#" class="navbar__link">CEMETERY</a>
-            <span class="navbar__divider">|</span>
-            <a href="#" class="navbar__link">CATACOMBS</a>
           </nav>
         </div>
 
@@ -55,13 +53,9 @@
             <button title="Language">EN</button>
           </div>
 
-          <a
-            style="text-decoration: none"
-            href="./animals_pages/home.html"
-            class="header__icons-bottom"
-          >
-            <span class="cemetery-label">Animals cemetery</span>
-            <i class="fa-solid fa-chevron-right"></i>
+          <a style="text-decoration: none;" href="../home.html" class="header__icons-bottom">
+            <span class="cemetery-label">Cemetery</span>
+            <i class="fa-solid fa-chevron-left"></i>
           </a>
         </div>
       </div>
@@ -71,16 +65,16 @@
       <div class="modal-content">
         <h2>Day / Night</h2>
         <div class="day-night-options">
-          <img src="assets/img/weather/Sun.png" alt="Day" />
-          <img src="assets/img/weather/Moon.png" alt="Night" />
+          <img src="../assets/img/weather/Sun.png" alt="Day" />
+          <img src="../assets/img/weather/Moon.png" alt="Night" />
         </div>
 
         <h2>Weather</h2>
         <div class="weather-options">
-          <img src="assets/img/weather/Sun.png" alt="Sunny" />
-          <img src="assets/img/weather/Rain.png" alt="Rain" />
-          <img src="assets/img/weather/Snow.png" alt="Snow" />
-          <img src="assets/img/weather/Storm.png" alt="Storm" />
+          <img src="../assets/img/weather/Sun.png" alt="Sunny" />
+          <img src="../assets/img/weather/Rain.png" alt="Rain" />
+          <img src="../assets/img/weather/Snow.png" alt="Snow" />
+          <img src="../assets/img/weather/Storm.png" alt="Storm" />
         </div>
 
         <button id="closeModalBtn">SAVE AND CLOSE</button>
@@ -92,7 +86,7 @@
     <!-- sky -->
     <div class="weather-effect weather-effect--rainy"></div>
     <div class="sky sky--day">
-      <img src="./assets/img/sky/birds.gif" alt="Birds" class="sky__birds" />
+      <img src="./../assets/img/sky/birds.gif" alt="Birds" class="sky__birds" />
     </div>
 
     <div class="page-main__interior"></div>
@@ -109,7 +103,7 @@
       <div class="image-card-left">
         <div class="image-card__image-wrapper">
           <img
-            src="./assets/img/text/tablica_informacyjna.png"
+            src="./../assets/img/text/tablica_informacyjna.png"
             class="image-card__image"
           />
           <div class="image-card__icons">
@@ -121,11 +115,13 @@
       <div class="image-card-right">
         <div class="image-card__image-wrapper">
           <img
-            src="./assets/img/text/cmentarz_zwierzat.png"
+            src="./../assets/img/Animals/home/people.png"
             class="image-card__image"
           />
           <div class="image-card__icons">
-            <button class="icon-button"><i class="fa-solid fa-paw"></i></button>
+            <button class="icon-button">
+              <i class="fa-solid fa-user"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -203,7 +199,7 @@
         }, 1000);
       });
     </script>
-    <script src="./assets/scripts/weather.js"></script>
-    <script src="./assets/scripts/footer.js"></script>
+    <script src="./../assets/scripts/weather.js"></script>
+    <script src="./../assets/scripts/footer.js"></script>
   </body>
 </html>
