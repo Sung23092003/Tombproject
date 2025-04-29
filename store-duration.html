@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
+    <link rel="stylesheet" href="./assets/style/components/store.css" />
+    <link rel="stylesheet" href="./assets/style/pages/summary.css">
+    <link rel="stylesheet" href="./assets/style/pages/store-deceased.css" />
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css" />
+    <style>
+        .store-memory__containt {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .store__memory {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--white);
+        }
+
+        #souvenirImage {
+            width: 150px;
+            height: 150px;
+        }
+
+        #MemoryText {
+            font-size: 18px;
+        }
+
+        #currentDate,
+        #signatureText {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body class="page">
+    <header class="header">
+        <a href="./home.html" class="header__logo">
+            <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+        </a>
+        <div class="header__right">
+            <div class="header__menu">
+                <div class="navbar__top-row">
+                    <a href="#" class="navbar__btn">
+                        <span class="navbar__btn-icon">+</span> NEW FUNERAL
+                    </a>
+                    <div class="navbar__text-links">
+                        <a href="./store-souvenir.html">STORE</a>
+                        <span class="navbar__divider">|</span>
+                        <a href="#">WEATHER</a>
+                        <span class="navbar__divider">|</span>
+                        <a href="./login.html">SIGN IN</a>
+                    </div>
+                </div>
+
+                <nav class="navbar__center">
+                    <a href="./home.html" class="navbar__link navbar__link--active">GATE</a>
+                    <span class="navbar__divider">|</span>
+                    <a href="#" class="navbar__link">BOARD</a>
+                    <span class="navbar__divider">|</span>
+                    <a href="#" class="navbar__link">CEMETERY</a>
+                    <span class="navbar__divider">|</span>
+                    <a href="#" class="navbar__link">CATACOMBS</a>
+                </nav>
+            </div>
+
+            <div class="header__icons">
+                <div class="header__icons-top">
+                    <button class="fa-solid fa-magnifying-glass"></button>
+                    <button class="fa-solid fa-volume-high"></button>
+                    <button title="Language">EN</button>
+                </div>
+
+                <div class="header__icons-bottom">
+                    <span class="cemetery-label">Animals cemetery</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-main main night mt-50">
+        <div class="flex wrap">
+            <div class="title mr-100">Store: People</div>
+            <div class="steps flex gap-lg">
+                <div class="step">
+                    <span class="step__number">1</span>
+                    <p class="step__des mt-16">Souvenir</p>
+                </div>
+                <span class="steps_span">_</span>
+                <!-- 2 -->
+                <div class="step">
+                    <span class="step__number">2</span>
+                    <p class="step__des mt-16">Deceased</p>
+                </div>
+                <span class="steps_span">_</span>
+                <!-- 3 -->
+                <div class="step">
+                    <span class="step__number">3</span>
+                    <p class="step__des mt-16">Memory</p>
+                </div>
+                <span class="steps_span">_</span>
+                <!-- 4 -->
+                <div class="step active">
+                    <span class="step__number">4</span>
+                    <p class="step__des mt-16">Duration</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-between align-center">
+            <h2 class="store__title text-white mt-32">
+                Find the deceased who you want to leave a memory of
+            </h2>
+        </div>
+
+        <div style="margin-bottom: 74px;" class="mt-16">
+            <div class="store-memory__containt flex">
+                <section class="store-section">
+                    <aside class="store-sidebar__deceased">
+                        <div class="store__souvenir"></div>
+                        <img class="deceased__img" src="./assets/img/deceased/deceased-default.png" alt="" />
+                    </aside>
+
+                    <div class="deceased__infomation-containt" id="storeGallery"></div>
+                </section>
+                <div class="flex flex-col w-full">
+                    <div class="store__memory">
+                        <div style="width: 80%;" class="flex flex-col space-between">
+                            <div style="margin-left: 20px;" class="memory-display">
+                                <span id="memoryText"></span>
+                            </div>
+                            <div style="justify-content: flex-end;" class="flex align-center">
+                                <div class="signature-display">
+                                    <span id="signatureText"></span>
+                                    <span id="currentDate"></span>
+                                </div>
+                                <div class="store__deceased-img-container">
+                                    <img id="souvenirImage" src="" alt="Souvenir Image" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="pay-section mt-32">
+                            
+                            <div class="pay-cards">
+                              <div class="pay-card selected">
+                                <div class="pay-card__icon">
+                                  <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="pay-card__title">FREE!</div>
+                                <div class="pay-card__subtitle">Valid until 15.07.2053</div>
+                                <div class="pay-card__price">€ 1</div>
+                                <button class="pay-card__btn selected">CHOSEN ✓</button>
+                              </div>
+
+                              <div class="pay-card">
+                                <div class="pay-card__icon">
+                                  <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div class="pay-card__title">FOREVER</div>
+                                <div class="pay-card__subtitle">Valid until 15.07.2053</div>
+                                <div class="pay-card__price">€ 10</div>
+                                <button class="pay-card__btn">CHOSEN</button>
+                              </div>
+                
+                              <div class="pay-card">
+                                <div class="pay-card__icon">
+                                  <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div class="pay-card__title">12 MONTHS</div>
+                                <div class="pay-card__subtitle">Valid until 29.04.2026</div>
+                                <div class="pay-card__price">€ 2</div>
+                                <button class="pay-card__btn">CHOOSE</button>
+                              </div>
+                
+                              <div class="pay-card">
+                                <div class="pay-card__icon">
+                                  <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div class="pay-card__title">36 MONTHS</div>
+                                <div class="pay-card__subtitle">Valid until 27.04.2028</div>
+                                <div class="pay-card__price">€ 3</div>
+                                <button class="pay-card__btn">CHOOSE</button>
+                              </div>
+                            </div>
+                
+                            <div class="pay-form">
+                              <label class="checkbox-container">
+                                <input type="checkbox" checked />
+                                <span class="checkmark"></span>
+                                I accept <a class="link">Terms of Service *</a>
+                              </label>
+                              <button style="width: 20%; float: right;" class="pay-submit">PAY</button>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div style="margin-bottom: 120px" class="form-footer w-full mt-32">
+            <a href="./store-deceased.html" class="form-footer__btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <a style="display: none;" href="./deceased.html" class="form-footer__btn form-footer__btn--primary"
+                id="nextBtn">
+                Next <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer__links">
+            <a href="./about-us.html">ABOUT US</a>
+            <span class="footer__divider">|</span>
+            <a href="./terms-of-service.html">TERMS OF SERVICE</a>
+            <span class="footer__divider">|</span>
+            <a href="./legal-aspect.html">LEGAL ASPECT</a>
+            <span class="footer__divider">|</span>
+            <a href="./price-list.html">PRICE LIST</a>
+            <span class="footer__divider">|</span>
+            <a href="./psp.html">PSP</a>
+            <span class="footer__divider">|</span>
+            <a href="./history.html">HISTORY</a>
+            <span class="footer__divider">|</span>
+            <a href="./affilation.html">AFFILIATION</a>
+            <span class="footer__divider">|</span>
+            <a href="./contact.html">CONTACT</a>
+            <span class="footer__social">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </span>
+        </div>
+        <p class="footer__copyright">
+            All right reserved Virtual Grave &copy; 2025. Design and implementation
+            Cyber.pl
+        </p>
+    </footer>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            const nextBtn = document.getElementById("nextBtn");
+
+            // Lắng nghe sự kiện click vào nút Next
+            nextBtn.addEventListener("click", function () {
+                // Lấy giá trị từ các input
+                const memoryInput = document.querySelector(".memory__input").value;
+                const signatureInput =
+                    document.querySelector(".memory__input-sm").value;
+
+                // Lưu vào localStorage
+                localStorage.setItem("memory", memoryInput);
+                localStorage.setItem("signature", signatureInput);
+
+                // Nếu cần thiết, bạn có thể thực hiện các bước chuyển trang hoặc hành động khác ở đây
+            });
+
+
+            const savedImg = localStorage.getItem("storeDeceasedImage");
+            const savedSouvenir = localStorage.getItem("storeSouvenir");
+            const souvenirImage = document.getElementById("souvenirImage");
+            const memory = localStorage.getItem("memory");
+            const signature = localStorage.getItem("signature");
+            const selectedDeceasedData = JSON.parse(
+                localStorage.getItem("selectedDeceased")
+            );
+
+            if (selectedDeceasedData) {
+                const souvenirContainer = document.querySelector(".store__souvenir");
+                const existingOverlay = document.querySelector(".souvenir-overlay");
+                if (existingOverlay) existingOverlay.remove();
+
+                const overlay = document.createElement("div");
+                overlay.className = "souvenir-overlay";
+                overlay.innerHTML = `
+              <h3 style="opacity:0.6;">${selectedDeceasedData.name} ${selectedDeceasedData.surname}</h3>
+              <p style="margin-top: 6px; opacity:0.6;">Born: ${selectedDeceasedData.dateOfBirth}</p>
+              <p style="margin-top: 6px; opacity:0.6;">Died: ${selectedDeceasedData.dateOfDeath}</p>
+              <p style="margin-top: 6px; opacity:0.6;">Accommodation No.: #${selectedDeceasedData.accommodationNo}</p>
+              <button style="margin-top: 6px;" class="visit-button">Visit</button>
+            `;
+                souvenirContainer.appendChild(overlay);
+            }
+
+            if (savedImg) {
+                const imgEl = document.querySelector(".deceased__img");
+                imgEl.src = savedImg;
+            }
+
+            const name = localStorage.getItem("deceasedName");
+            const surname = localStorage.getItem("deceasedSurname");
+            const dob = localStorage.getItem("deceasedDob");
+            const dod = localStorage.getItem("deceasedDod");
+            const accNo = localStorage.getItem("deceasedAccNo");
+
+            const souvenirContainer = document.querySelector(".store-section");
+            const deceasedImgWrapper =
+                document.querySelector(".deceased__img").parentElement;
+
+            if (name && surname && dob && dod && accNo) {
+                const overlay = document.createElement("div");
+                overlay.className = "souvenir-overlay";
+                overlay.innerHTML = `
+              <h3 style="opacity:0.6;">${name} ${surname}</h3>
+              <p style="margin-top: 6px; opacity:0.6;">Born: ${dob}</p>
+              <p style="margin-top: 6px; opacity:0.6;">Died: ${dod}</p>
+              <p style="margin-top: 6px; opacity:0.6;">Accommodation No.: #${accNo}</p>
+              <button style="margin-top: 6px;" class="visit-button">Visit</button>
+            `;
+                souvenirContainer.appendChild(overlay);
+            }
+
+            if (savedSouvenir) {
+                const souvenirImg = document.createElement("img");
+                souvenirImg.src = savedSouvenir;
+                souvenirImg.classList.add("store__deceased-img");
+                deceasedImgWrapper.appendChild(souvenirImg);
+                const souvenirImage = document.getElementById("souvenirImage");
+                souvenirImage.src = savedSouvenir;
+            }
+
+            if (memory) {
+                document.getElementById("memoryText").textContent = memory;
+            }
+            if (signature) {
+                document.getElementById("signatureText").textContent = signature;
+            }
+
+            const currentDate = new Date();
+            const options = { day: '2-digit', month: 'short', year: 'numeric' };
+            const formattedDate = currentDate.toLocaleDateString('en-GB', options).replace(/ /g, ' ');
+            document.getElementById("currentDate").textContent = `, ${formattedDate}`;
+
+        });
+
+            // Xử lý chọn gói thanh toán
+    document.querySelectorAll(".pay-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        // Bỏ chọn tất cả thẻ trước đó
+        document.querySelectorAll(".pay-card").forEach((c) => {
+          c.classList.remove("selected");
+          c.querySelector(".pay-card__btn").classList.remove("selected");
+          c.querySelector(".pay-card__btn").textContent = "CHOOSE";
+        });
+
+        // Thêm class đã chọn
+        card.classList.add("selected");
+        const btn = card.querySelector(".pay-card__btn");
+        btn.classList.add("selected");
+        btn.textContent = "CHOSEN ✓";
+      });
+    });
+    </script>
+
+    <script src="./assets/scripts/footer.js"></script>
+</body>
+
+</html>

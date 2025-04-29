@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
+    <link rel="stylesheet" href="./assets/style/components/store.css" />
+    <link rel="stylesheet" href="./assets/style/pages/store-deceased.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+    />
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <a href="./home.html" class="header__logo">
+        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+      </a>
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="#" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
+            </a>
+            <div class="navbar__text-links">
+              <a href="./store-souvenir.html">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="./login.html">SIGN IN</a>
+            </div>
+          </div>
+
+          <nav class="navbar__center">
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CEMETERY</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CATACOMBS</a>
+          </nav>
+        </div>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <div class="header__icons-bottom">
+            <span class="cemetery-label">Animals cemetery</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main main night mt-50">
+      <div class="flex wrap">
+        <div class="title mr-100">Store: People</div>
+        <div class="steps flex gap-lg">
+          <div class="step">
+            <span class="step__number">1</span>
+            <p class="step__des mt-16">Souvenir</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 2 -->
+          <div class="step active">
+            <span class="step__number">2</span>
+            <p class="step__des mt-16">Deceased</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 3 -->
+          <div class="step">
+            <span class="step__number">3</span>
+            <p class="step__des mt-16">Memory</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 4 -->
+          <div class="step">
+            <span class="step__number">4</span>
+            <p class="step__des mt-16">Duration</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex space-between align-center">
+        <h2 class="store__title text-white mt-32">
+          Find the deceased who you want to leave a memory of
+        </h2>
+        <div class="store__search text-white">
+          <div class="store__search-container">
+            <p class="store__search-title">
+              FILLTERS
+              <i class="fa-solid fa-filter"></i>
+            </p>
+
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search name or surname or accommodatio..."
+              class="form-input"
+            />
+
+            <button type="button" class="search-button">
+              <span>Search</span>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 74px" class="mt-16">
+        <section class="store-section">
+          <aside class="store-sidebar__deceased">
+            <div class="store__souvenir"></div>
+            <img
+              class="deceased__img"
+              src="./assets/img/deceased/deceased-default.png"
+              alt=""
+            />
+          </aside>
+
+          <div class="deceased__infomation-containt" id="storeGallery"></div>
+        </section>
+        <div class="form-footer w-full mt-32">
+          <a href="./store-souvenir.html" class="form-footer__btn">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <a
+            href="./store-memory.html"
+            class="form-footer__btn form-footer__btn--primary"
+            id="nextBtn"
+          >
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer__links">
+        <a href="./about-us.html">ABOUT US</a>
+        <span class="footer__divider">|</span>
+        <a href="./terms-of-service.html">TERMS OF SERVICE</a>
+        <span class="footer__divider">|</span>
+        <a href="./legal-aspect.html">LEGAL ASPECT</a>
+        <span class="footer__divider">|</span>
+        <a href="./price-list.html">PRICE LIST</a>
+        <span class="footer__divider">|</span>
+        <a href="./psp.html">PSP</a>
+        <span class="footer__divider">|</span>
+        <a href="./history.html">HISTORY</a>
+        <span class="footer__divider">|</span>
+        <a href="./affilation.html">AFFILIATION</a>
+        <span class="footer__divider">|</span>
+        <a href="./contact.html">CONTACT</a>
+        <span class="footer__social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </span>
+      </div>
+      <p class="footer__copyright">
+        All right reserved Virtual Grave &copy; 2025. Design and implementation
+        Cyber.pl
+      </p>
+    </footer>
+    <script>
+      const deceasedList = [
+        {
+          name: "Tadeusz",
+          surname: "Kantor",
+          dateOfBirth: "1915-11-11",
+          dateOfDeath: "1990-11-11",
+          accommodationNo: 1,
+          img: "./assets/img/deceased/1.png",
+        },
+        {
+          name: "Adelajda",
+          surname: "Sabaudzka",
+          dateOfBirth: "1685-02-12",
+          dateOfDeath: "1712-02-12",
+          accommodationNo: 2,
+          img: "./assets/img/deceased/2.png",
+        },
+        {
+          name: "Bolesław",
+          surname: "Pałęcki",
+          dateOfBirth: "1930-12-24",
+          dateOfDeath: "1999-07-04",
+          accommodationNo: 3,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+        {
+          name: "Rodrigo",
+          surname: "Borgia",
+          dateOfBirth: "1431-08-18",
+          dateOfDeath: "1503-08-18",
+          accommodationNo: 4,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+        {
+          name: "Hanka",
+          surname: "Bielicka",
+          dateOfBirth: "1915-11-09",
+          dateOfDeath: "2006-03-09",
+          accommodationNo: 6,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+        {
+          name: "Richard",
+          surname: "Wagner",
+          dateOfBirth: "1813-05-22",
+          dateOfDeath: "1883-02-13",
+          accommodationNo: 7,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+        {
+          name: "Cesar",
+          surname: "Franck",
+          dateOfBirth: "1822-12-10",
+          dateOfDeath: "1890-11-08",
+          accommodationNo: 9,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+        {
+          name: "Joseph",
+          surname: "Haydn",
+          dateOfBirth: "1732-03-31",
+          dateOfDeath: "1809-05-31",
+          accommodationNo: 10,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+        {
+          name: "Johannes",
+          surname: "Brahms",
+          dateOfBirth: "1833-05-07",
+          dateOfDeath: "1897-04-03",
+          accommodationNo: 11,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+        {
+          name: "Franz Peter",
+          surname: "Schubert",
+          dateOfBirth: "1797-01-31",
+          dateOfDeath: "1828-11-19",
+          accommodationNo: 12,
+          img: "./assets/img/deceased/deceased-default.png",
+        },
+      ];
+
+      const gallery = document.getElementById("storeGallery");
+      const searchInput = document.getElementById("searchInput");
+      const imageElement = document.querySelector(".deceased__img");
+      const sidebar = document.querySelector(".store-sidebar__deceased");
+      const souvenir = document.querySelector(".store__souvenir");
+      let selectedDeceased = null;
+
+      function renderGallery(list) {
+        gallery.innerHTML = "";
+
+        const table = document.createElement("table");
+
+        const headerRow = document.createElement("tr");
+        headerRow.innerHTML = `
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Date of birth</th>
+    <th>Date of death</th>
+    <th>Accommodation No.</th>
+    <th>Action</th>
+  `;
+        table.appendChild(headerRow);
+
+        list.forEach((person) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+      <td>${person.name}</td>
+      <td>${person.surname}</td>
+      <td>${person.dateOfBirth}</td>
+      <td>${person.dateOfDeath}</td>
+      <td>#${person.accommodationNo}</td>
+      <td>
+        <button class="store-sidebar__button" data-img="${person.img}" data-name="${person.name}" data-surname="${person.surname}" data-dob="${person.dateOfBirth}" data-dod="${person.dateOfDeath}" data-accno="${person.accommodationNo}">
+          Choose
+        </button>
+      </td>
+    `;
+          table.appendChild(row);
+        });
+
+        gallery.appendChild(table);
+
+        attachButtonEvents();
+      }
+
+      function attachButtonEvents() {
+        const buttons = document.querySelectorAll(".store-sidebar__button");
+
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const imgSrc = btn.getAttribute("data-img");
+            const name = btn.getAttribute("data-name");
+            const surname = btn.getAttribute("data-surname");
+            const dob = btn.getAttribute("data-dob");
+            const dod = btn.getAttribute("data-dod");
+            const accNo = btn.getAttribute("data-accno");
+
+            imageElement.src = imgSrc;
+
+            selectedDeceased = {
+              name,
+              surname,
+              dateOfBirth: dob,
+              dateOfDeath: dod,
+              accommodationNo: accNo,
+              img: imgSrc,
+            };
+
+            const existingOverlay = document.querySelector(".souvenir-overlay");
+            if (existingOverlay) existingOverlay.remove();
+
+            const overlay = document.createElement("div");
+            overlay.className = "souvenir-overlay";
+            overlay.innerHTML = `
+        <h3 style="opacity:0.6;">${name} ${surname}</h3>
+        <p style="margin-top: 6px; opacity:0.6;">Born: ${dob}</p>
+        <p style="margin-top: 6px; opacity:0.6;">Died: ${dod}</p>
+        <p style="margin-top: 6px; opacity:0.6;">Accommodation No.: #${accNo}</p>
+        <button style="margin-top: 6px;" class="visit-button">Visit</button>
+      `;
+
+            souvenir.appendChild(overlay);
+
+            const souvenirSrc = localStorage.getItem("storeSouvenir");
+            if (souvenirSrc) {
+              const souvenirImg = document.createElement("img");
+              souvenirImg.src = souvenirSrc;
+              souvenirImg.classList.add("store__deceased-img");
+              imageElement.parentElement.appendChild(souvenirImg);
+            }
+          });
+        });
+      }
+
+      document.getElementById("nextBtn").addEventListener("click", function () {
+        if (selectedDeceased) {
+          localStorage.setItem(
+            "selectedDeceased",
+            JSON.stringify(selectedDeceased)
+          );
+        } else {
+          alert("Please select a deceased person before proceeding.");
+        }
+      });
+
+      // Khởi tạo ban đầu
+      renderGallery(deceasedList);
+      // Search
+      searchInput.addEventListener("input", () => {
+        const keyword = searchInput.value.toLowerCase();
+        const filtered = deceasedList.filter(
+          (person) =>
+            person.name.toLowerCase().includes(keyword) ||
+            person.surname.toLowerCase().includes(keyword)
+        );
+        renderGallery(filtered);
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", function () {
+        const fullSrc = document.querySelector(".deceased__img").src;
+        const relativeSrc = fullSrc.replace(location.origin, "");
+        localStorage.setItem("storeDeceasedImage", relativeSrc);
+      });
+    </script>
+    <script src="./assets/scripts/footer.js"></script>
+  </body>
+</html>

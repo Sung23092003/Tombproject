@@ -1,0 +1,252 @@
+.store-sidebar__deceased {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .deceased__img {
+    width: 400px;
+    height: 500px;
+  }
+
+  .store__deceased-img{
+    position: absolute;
+    width: 30%;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(12%);
+  }
+
+  /* search */
+  .store__search-container {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  #searchInput {
+    width: 300px;
+    padding: 12px 16px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #444;
+    color: #fff;
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  #searchInput:focus {
+    border-bottom: 2px solid #ffc107;
+  }
+
+  .store__search-title {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffc107;
+    gap: 4px;
+    background: none;
+    border: 1px solid;
+    padding: 11px 26px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+
+  .search-button:hover {
+    opacity: 0.8;
+  }
+
+  /* infomation */
+  .deceased__infomation-containt {
+    flex: 1;
+  }
+
+  /* Styling table trong storeGallery */
+  #storeGallery table {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  #storeGallery th,
+  #storeGallery td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #555;
+    text-align: center;
+    color: #fff;
+  }
+
+  #storeGallery th {
+    background-color: #222;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  #storeGallery tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  #storeGallery button.store-sidebar__button {
+    background-color: #ffc107;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #storeGallery button.store-sidebar__button:hover {
+    background-color: #e0a800;
+  }
+
+  .souvenir-overlay {
+    width: 400px;
+    height: 150px;
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .souvenir-content h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+
+  .souvenir-content p {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+
+  .visit-button {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 4px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .visit-button:hover {
+    background-color: #e0a800;
+  }
+
+  /* Tablet breakpoint (≤1024px) */
+  @media (max-width: 1024px) {
+    .store-section {
+      flex-direction: column;
+    }
+
+    .store-sidebar {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      min-width: 100%;
+    }
+
+    .store-sidebar__button {
+      flex: 1 0 auto;
+      text-align: center;
+      border-left: none;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+
+    .store-sidebar__button:hover,
+    .store-sidebar__button.active {
+      border-left: none;
+      border-bottom: 3px solid #ffc107;
+    }
+
+    .store__search-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    #searchInput {
+      width: 100%;
+    }
+
+    .store__search-title {
+      text-align: left;
+    }
+
+    .image-section__block {
+      flex: 1 1 30%;
+      max-width: 30%;
+    }
+
+    .deceased__img {
+      width: 100%;
+      height: auto;
+    }
+
+    .souvenir-overlay {
+        width: 100%;
+    }
+  }
+
+  /* Mobile breakpoint (≤600px) */
+  @media (max-width: 600px) {
+    .store__title,
+    .store-content__title {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .store__search-container {
+      align-items: stretch;
+    }
+
+    .search-button {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .image-section__block {
+      flex: 1 1 45%;
+      max-width: 45%;
+    }
+
+    .store-sidebar__button {
+      font-size: 12px;
+      padding: 12px;
+    }
+
+    #storeGallery table {
+      font-size: 12px;
+    }
+
+    #storeGallery th,
+    #storeGallery td {
+      padding: 8px 10px;
+    }
+
+    #storeGallery button.store-sidebar__button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }

@@ -28,7 +28,7 @@
               <span class="navbar__btn-icon">+</span> NEW FUNERAL
             </a>
             <div class="navbar__text-links">
-              <a href="#">STORE</a>
+              <a href="./store-souvenir.html">STORE</a>
               <span class="navbar__divider">|</span>
               <a href="#">WEATHER</a>
               <span class="navbar__divider">|</span>
@@ -95,7 +95,7 @@
       <h2 class="store__title text-white mt-32">
         Choose a candle, flower or stone
       </h2>
-      <div class="mt-16">
+      <div style="margin-bottom: 74px" class="mt-16">
         <section class="store-section">
           <aside class="store-sidebar">
             <button class="store-sidebar__button active">LIGHTS</button>
@@ -104,37 +104,20 @@
             <button class="store-sidebar__button">OTHER</button>
           </aside>
 
-          <div class="store-content">
-            <h3 class="store-content__title">
-              Configure the inscription on the tomb
-            </h3>
-
-            <form class="store-form">
-              <div class="form-group">
-                <label for="familyName" class="form-label">Family name</label>
-                <input
-                  type="text"
-                  id="familyName"
-                  class="form-input"
-                  placeholder="Enter family name"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="numberOfPlaces" class="form-label"
-                  >Number of places</label
-                >
-                <input
-                  type="number"
-                  id="numberOfPlaces"
-                  class="form-input"
-                  min="1"
-                  placeholder="Enter number of places"
-                />
-              </div>
-            </form>
-          </div>
+          <div class="image-section__gallery" id="storeGallery"></div>
         </section>
+        <div class="form-footer w-full mt-32">
+          <a href="./new-burial.html" class="form-footer__btn">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <a
+            href="./store-deceased.html"
+            class="form-footer__btn form-footer__btn--primary"
+            id="nextBtn"
+          >
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </main>
 
@@ -167,6 +150,124 @@
         Cyber.pl
       </p>
     </footer>
+    <script>
+      const lights = [
+        { img: "./assets/img/lights/1.png" },
+        { img: "./assets/img/lights/2.png" },
+        { img: "./assets/img/lights/3.png" },
+        { img: "./assets/img/lights/4.png" },
+        { img: "./assets/img/lights/5.png" },
+        { img: "./assets/img/lights/6.png" },
+        { img: "./assets/img/lights/7.png" },
+        { img: "./assets/img/lights/8.png" },
+        { img: "./assets/img/lights/9.png" },
+        { img: "./assets/img/lights/10.png" },
+      ];
+
+      const flowers = [
+        { img: "./assets/img/flowers/1.png" },
+        { img: "./assets/img/flowers/2.png" },
+        { img: "./assets/img/flowers/3.png" },
+        { img: "./assets/img/flowers/4.png" },
+        { img: "./assets/img/flowers/5.png" },
+        { img: "./assets/img/flowers/6.png" },
+        { img: "./assets/img/flowers/7.png" },
+        { img: "./assets/img/flowers/8.png" },
+        { img: "./assets/img/flowers/9.png" },
+        { img: "./assets/img/flowers/10.png" },
+      ];
+
+      const stones = [
+        { img: "./assets/img/stones/1.png" },
+        { img: "./assets/img/stones/2.png" },
+        { img: "./assets/img/stones/3.png" },
+        { img: "./assets/img/stones/4.png" },
+        { img: "./assets/img/stones/5.png" },
+        { img: "./assets/img/stones/6.png" },
+        { img: "./assets/img/stones/7.png" },
+        { img: "./assets/img/stones/8.png" },
+        { img: "./assets/img/stones/9.png" },
+        { img: "./assets/img/stones/10.png" },
+      ];
+
+      const others = [
+        { img: "./assets/img/others/1.png" },
+        { img: "./assets/img/others/2.png" },
+        { img: "./assets/img/others/3.png" },
+        { img: "./assets/img/others/4.png" },
+        { img: "./assets/img/others/5.png" },
+        { img: "./assets/img/others/6.png" },
+        { img: "./assets/img/others/7.png" },
+        { img: "./assets/img/others/8.png" },
+        { img: "./assets/img/others/9.png" },
+        { img: "./assets/img/others/10.png" },
+      ];
+
+      const gallery = document.getElementById("storeGallery");
+
+      function renderTombstones(items) {
+        gallery.innerHTML = ""; // Xóa nội dung cũ trong gallery
+
+        items.forEach((tomb, index) => {
+          const block = document.createElement("div");
+          block.className = "image-section__block";
+          block.dataset.id = `tomb-${index}`;
+          block.innerHTML = `
+      <div class="image-card">
+        <img src="${tomb.img}" alt="Tombstone ${index + 1}" />
+      </div>
+    `;
+
+          block.addEventListener("click", () => {
+            // Xóa 'selected' ở tất cả block
+            document
+              .querySelectorAll(".image-section__block")
+              .forEach((b) => b.classList.remove("selected"));
+            // Thêm 'selected' vào block đang click
+            block.classList.add("selected");
+
+            // Lưu đường dẫn ảnh vào localStorage
+            localStorage.setItem("storeSouvenir", tomb.img);
+          });
+
+          gallery.appendChild(block);
+        });
+
+        // Kiểm tra tombstone đã chọn trước khi bấm nút Next
+        document.getElementById("nextBtn").addEventListener("click", (e) => {
+          const selected = localStorage.getItem("storeSouvenir");
+          if (!selected) {
+            e.preventDefault();
+            alert("Please select a tombstone before proceeding.");
+          }
+        });
+      }
+
+      // Mặc định hiển thị ảnh của Lights
+      renderTombstones(lights);
+
+      // Lắng nghe sự kiện click vào các nút của sidebar để thay đổi ảnh
+      document.querySelectorAll(".store-sidebar__button").forEach((button) => {
+        button.addEventListener("click", (e) => {
+          // Cập nhật active class cho các button
+          document
+            .querySelectorAll(".store-sidebar__button")
+            .forEach((btn) => btn.classList.remove("active"));
+          e.target.classList.add("active");
+
+          // Thay đổi danh sách ảnh dựa vào lựa chọn
+          if (e.target.textContent === "LIGHTS") {
+            renderTombstones(lights);
+          } else if (e.target.textContent === "FLOWERS") {
+            renderTombstones(flowers);
+          } else if (e.target.textContent === "STONES") {
+            renderTombstones(stones);
+          } else if (e.target.textContent === "OTHER") {
+            renderTombstones(others);
+          }
+        });
+      });
+    </script>
     <script src="./assets/scripts/footer.js"></script>
   </body>
 </html>
