@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./../assets/style/components/weather.css" />
     <link rel="stylesheet" href="./../assets/style/components/header.css" />
     <link rel="stylesheet" href="./../assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./../assets/style/components/weather.css" />
     <link rel="stylesheet" href="./../assets/style/pages/home.css" />
     <link
       rel="stylesheet"
@@ -25,8 +26,8 @@
 
       .page-main__interior {
         scale: 1.2;
-        background: url(".././assets/img/background/scena2.png") no-repeat center
-          center;
+        background: url(".././assets/img/background/scena2.png") no-repeat
+          center center;
       }
 
       .sky-snow {
@@ -67,7 +68,7 @@
         border-radius: 50%;
       }
 
-      .carousel-btn:hover{
+      .carousel-btn:hover {
         opacity: 0.8;
       }
 
@@ -95,64 +96,68 @@
   </head>
   <body class="page">
     <header class="header">
-        <a href="../home.html" class="header__logo">
-          <img src="./../assets/img/Animals/logo.png" alt="Virtual Grave Logo" />
-        </a>
-        <div class="header__right">
-          <div class="header__menu">
-            <div class="navbar__top-row">
-              <a href="./new-burial.html" class="navbar__btn">
-                <span class="navbar__btn-icon">+</span> NEW FUNERAL
-              </a>
-              <div class="navbar__text-links">
-                <a href="./store-souvenir.html">STORE</a>
-                <span class="navbar__divider">|</span>
-                <a href="#">WEATHER</a>
-                <span class="navbar__divider">|</span>
-                <a href="./login.html">SIGN IN</a>
-              </div>
-            </div>
-  
-            <nav class="navbar__center">
-              <a href="./home.html" class="navbar__link navbar__link--active"
-                >GATE</a
-              >
-              <span class="navbar__divider">|</span>
-              <a  href="./board.html" class="navbar__link">BOARD</a>
-              <span class="navbar__divider">|</span>
-                <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
-            </nav>
-          </div>
-  
-          <div class="header__icons">
-            <div class="header__icons-top">
-              <button class="fa-solid fa-magnifying-glass"></button>
-              <button class="fa-solid fa-volume-high"></button>
-              <button title="Language">EN</button>
-            </div>
-  
-            <a style="text-decoration: none;" href="./home.html" class="header__icons-bottom">
-              <span class="cemetery-label">Cemetery</span>
-              <i class="fa-solid fa-chevron-left"></i>
+      <a href="../home.html" class="header__logo">
+        <img src="./../assets/img/Animals/logo.png" alt="Virtual Grave Logo" />
+      </a>
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="./new-burial.html" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
             </a>
+            <div class="navbar__text-links">
+              <a href="./store-souvenir.html">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="./login.html">SIGN IN</a>
+            </div>
           </div>
+
+          <nav class="navbar__center">
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
+            <span class="navbar__divider">|</span>
+            <a href="./board.html" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
+          </nav>
         </div>
-      </header>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <a
+            style="text-decoration: none"
+            href="./home.html"
+            class="header__icons-bottom"
+          >
+            <span class="cemetery-label">Cemetery</span>
+            <i class="fa-solid fa-chevron-left"></i>
+          </a>
+        </div>
+      </div>
+    </header>
     <!-- weather modal -->
     <div id="weatherModal" class="modal hidden">
       <div class="modal-content">
         <h2>Day / Night</h2>
         <div class="day-night-options">
-          <img src="..././assets/img/weather/Sun.png" alt="Day" />
-          <img src="..././assets/img/weather/Moon.png" alt="Night" />
+          <img src="../assets/img/weather/Sun.png" alt="Day" />
+          <img src="../assets/img/weather/Moon.png" alt="Night" />
         </div>
 
         <h2>Weather</h2>
         <div class="weather-options">
-          <img src="..././assets/img/weather/Sun.png" alt="Sunny" />
-          <img src="..././assets/img/weather/Rain.png" alt="Rain" />
-          <img src="..././assets/img/weather/Snow.png" alt="Snow" />
-          <img src="..././assets/img/weather/Storm.png" alt="Storm" />
+          <img src="../assets/img/weather/Sun.png" alt="Sunny" />
+          <img src="../assets/img/weather/Rain.png" alt="Rain" />
+          <img src="../assets/img/weather/Snow.png" alt="Snow" />
+          <img src="../assets/img/weather/Storm.png" alt="Storm" />
         </div>
 
         <button id="closeModalBtn">SAVE AND CLOSE</button>
@@ -216,6 +221,9 @@
         if (document.querySelector(".sky-snow")) {
           interior.style.background =
             'url(".././assets/img/background/scena2__snow.png") no-repeat center center';
+        }else{
+          interior.style.background =
+            'url(".././assets/img/background/scena2.png") no-repeat center center';
         }
       });
 
@@ -287,6 +295,7 @@
 
       renderCarousel();
     </script>
+    <script src="./../assets/scripts/weather.js"></script>
     <script src=".././assets/scripts/footer.js"></script>
   </body>
 </html>

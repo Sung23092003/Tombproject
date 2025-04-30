@@ -5,77 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
     <title>Virtual Graveyard</title>
-    <link rel="stylesheet" href="./assets/style/global.css" />
-    <link rel="stylesheet" href="./assets/style/components/weather.css">
-    <link rel="stylesheet" href="./assets/style/components/header.css" />
-    <link rel="stylesheet" href="./assets/style/components/footer.css" />
-    <link rel="stylesheet" href="./assets/style/pages/catacombs-gate.css" />
+    <link rel="stylesheet" href=".././assets/style/global.css" />
+    <link rel="stylesheet" href=".././assets/style/components/weather.css">
+    <link rel="stylesheet" href=".././assets/style/components/header.css" />
+    <link rel="stylesheet" href=".././assets/style/components/footer.css" />
+    <link rel="stylesheet" href=".././assets/style/pages/catacombs-gate.css" />
     <link
       rel="stylesheet"
-      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+      href=".././assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
   </head>
   <body class="page">
     <header class="header">
-      <a href="./home.html" class="header__logo">
-        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
-      </a>
-
-      <div class="header__right">
-        <div class="header__menu">
-          <div class="navbar__top-row">
-            <a href="./new-burial.html" class="navbar__btn">
-              <span class="navbar__btn-icon">+</span> NEW FUNERAL
-            </a>
-            <div class="navbar__text-links">
-              <a href="./store-souvenir.html">STORE</a>
-              <span class="navbar__divider">|</span>
-              <a href="#">WEATHER</a>
-              <span class="navbar__divider">|</span>
-              <a href="#">SIGN IN</a>
+        <a href="../home.html" class="header__logo">
+          <img src="./../assets/img/Animals/logo.png" alt="Virtual Grave Logo" />
+        </a>
+        <div class="header__right">
+          <div class="header__menu">
+            <div class="navbar__top-row">
+              <a href="./new-burial.html" class="navbar__btn">
+                <span class="navbar__btn-icon">+</span> NEW FUNERAL
+              </a>
+              <div class="navbar__text-links">
+                <a href="./store-souvenir.html">STORE</a>
+                <span class="navbar__divider">|</span>
+                <a href="#">WEATHER</a>
+                <span class="navbar__divider">|</span>
+                <a href="./login.html">SIGN IN</a>
+              </div>
             </div>
+  
+            <nav class="navbar__center">
+              <a href="./home.html" class="navbar__link navbar__link--active"
+                >GATE</a
+              >
+              <span class="navbar__divider">|</span>
+              <a  href="./board.html" class="navbar__link">BOARD</a>
+              <span class="navbar__divider">|</span>
+                <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
+            </nav>
           </div>
-
-          <nav class="navbar__center">
-            <a href="./home.html" class="navbar__link navbar__link--active">GATE</a>
-            <span class="navbar__divider">|</span>
-         <a href="./board.html" class="navbar__link">BOARD</a>
-            <span class="navbar__divider">|</span>
-              <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
-            <span class="navbar__divider">|</span>
-            <a href="./catocombs.html" class="navbar__link">CATACOMBS</a>
-          </nav>
+  
+          <div class="header__icons">
+            <div class="header__icons-top">
+              <button class="fa-solid fa-magnifying-glass"></button>
+              <button class="fa-solid fa-volume-high"></button>
+              <button title="Language">EN</button>
+            </div>
+  
+            <a style="text-decoration: none;" href="./home.html" class="header__icons-bottom">
+              <span class="cemetery-label">Cemetery</span>
+              <i class="fa-solid fa-chevron-left"></i>
+            </a>
+          </div>
         </div>
-
-        <div class="header__icons">
-          <div class="header__icons-top">
-            <button class="fa-solid fa-magnifying-glass"></button>
-            <button class="fa-solid fa-volume-high"></button>
-            <button title="Language">EN</button>
-          </div>
-
-          <div class="header__icons-bottom">
-            <span class="cemetery-label">Animals cemetery</span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </div>
-      </div>
-    </header>
+      </header>
     <!-- weather modal -->
     <div id="weatherModal" class="modal hidden">
       <div class="modal-content">
         <h2>Day / Night</h2>
         <div class="day-night-options">
-          <img src="assets/img/weather/Sun.png" alt="Day" />
-          <img src="assets/img/weather/Moon.png" alt="Night" />
+          <img src="../assets/img/weather/Sun.png" alt="Day" />
+          <img src="../assets/img/weather/Moon.png" alt="Night" />
         </div>
 
         <h2>Weather</h2>
         <div class="weather-options">
-          <img src="assets/img/weather/Sun.png" alt="Sunny" />
-          <img src="assets/img/weather/Rain.png" alt="Rain" />
-          <img src="assets/img/weather/Snow.png" alt="Snow" />
-          <img src="assets/img/weather/Storm.png" alt="Storm" />
+          <img src="../assets/img/weather/Sun.png" alt="Sunny" />
+          <img src="../assets/img/weather/Rain.png" alt="Rain" />
+          <img src="../assets/img/weather/Snow.png" alt="Snow" />
+          <img src="../assets/img/weather/Storm.png" alt="Storm" />
         </div>
 
         <button id="closeModalBtn">SAVE AND CLOSE</button>
@@ -144,10 +143,10 @@
       document.querySelector(".page-main--background").classList.add("zooming");
 
       setTimeout(() => {
-        window.location.href = "catocombs.html";
+        window.location.href = "cemetery.html";
       }, 1000);
     });
   </script>
-  <script src="./assets/scripts/weather.js"></script>
-  <script src="./assets/scripts/footer.js"></script>
+  <script src=".././assets/scripts/weather.js"></script>
+  <script src=".././assets/scripts/footer.js"></script>
 </html>

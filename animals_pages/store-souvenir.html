@@ -3,28 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <link rel="icon" href="./../assets/img/WC_Logo.png" type="image/png" />
     <title>Virtual Graveyard</title>
-    <link rel="stylesheet" href="./assets/style/global.css" />
-    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
-    <link rel="stylesheet" href="./assets/style/components/header.css" />
-    <link rel="stylesheet" href="./assets/style/components/footer.css" />
-    <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
-    <link rel="stylesheet" href="./assets/style/components/store.css" />
+    <link rel="stylesheet" href="./../assets/style/global.css" />
+    <link rel="stylesheet" href="./../assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./../assets/style/components/header.css" />
+    <link rel="stylesheet" href="./../assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./../assets/style/components/new_funeral.css" />
+    <link rel="stylesheet" href="./../assets/style/components/store.css" />
     <link
       rel="stylesheet"
-      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+      href="./../assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
   </head>
   <body class="page">
-    <header class="header">
-      <a href="./home.html" class="header__logo">
-        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+ <header class="header">
+      <a href="../home.html" class="header__logo">
+        <img src="./../assets/img/Animals/logo.png" alt="Virtual Grave Logo" />
       </a>
       <div class="header__right">
         <div class="header__menu">
           <div class="navbar__top-row">
-            <a href="#" class="navbar__btn">
+            <a href="./new-burial.html" class="navbar__btn">
               <span class="navbar__btn-icon">+</span> NEW FUNERAL
             </a>
             <div class="navbar__text-links">
@@ -41,11 +41,9 @@
               >GATE</a
             >
             <span class="navbar__divider">|</span>
-         <a href="./board.html" class="navbar__link">BOARD</a>
+            <a  href="./board.html" class="navbar__link">BOARD</a>
             <span class="navbar__divider">|</span>
               <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
-            <span class="navbar__divider">|</span>
-            <a href="./catocombs.html" class="navbar__link">CATACOMBS</a>
           </nav>
         </div>
 
@@ -56,17 +54,17 @@
             <button title="Language">EN</button>
           </div>
 
-          <div class="header__icons-bottom">
-            <span class="cemetery-label">Animals cemetery</span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
+          <a style="text-decoration: none;" href="./home.html" class="header__icons-bottom">
+            <span class="cemetery-label">Cemetery</span>
+            <i class="fa-solid fa-chevron-left"></i>
+          </a>
         </div>
       </div>
     </header>
 
     <main class="page-main main night mt-50">
       <div class="flex wrap">
-        <div class="title mr-100">Store: People</div>
+        <div class="title mr-100">Store: Animals</div>
         <div class="steps flex gap-lg">
           <div class="step active">
             <span class="step__number">1</span>
@@ -152,55 +150,55 @@
     </footer>
     <script>
       const lights = [
-        { img: "./assets/img/lights/1.png" },
-        { img: "./assets/img/lights/2.png" },
-        { img: "./assets/img/lights/3.png" },
-        { img: "./assets/img/lights/4.png" },
-        { img: "./assets/img/lights/5.png" },
-        { img: "./assets/img/lights/6.png" },
-        { img: "./assets/img/lights/7.png" },
-        { img: "./assets/img/lights/8.png" },
-        { img: "./assets/img/lights/9.png" },
-        { img: "./assets/img/lights/10.png" },
+        { img: "./../assets/img/lights/1.png" },
+        { img: "./../assets/img/lights/2.png" },
+        { img: "./../assets/img/lights/3.png" },
+        { img: "./../assets/img/lights/4.png" },
+        { img: "./../assets/img/lights/5.png" },
+        { img: "./../assets/img/lights/6.png" },
+        { img: "./../assets/img/lights/7.png" },
+        { img: "./../assets/img/lights/8.png" },
+        { img: "./../assets/img/lights/9.png" },
+        { img: "./../assets/img/lights/10.png" },
       ];
 
       const flowers = [
-        { img: "./assets/img/flowers/1.png" },
-        { img: "./assets/img/flowers/2.png" },
-        { img: "./assets/img/flowers/3.png" },
-        { img: "./assets/img/flowers/4.png" },
-        { img: "./assets/img/flowers/5.png" },
-        { img: "./assets/img/flowers/6.png" },
-        { img: "./assets/img/flowers/7.png" },
-        { img: "./assets/img/flowers/8.png" },
-        { img: "./assets/img/flowers/9.png" },
-        { img: "./assets/img/flowers/10.png" },
+        { img: "./../assets/img/flowers/1.png" },
+        { img: "./../assets/img/flowers/2.png" },
+        { img: "./../assets/img/flowers/3.png" },
+        { img: "./../assets/img/flowers/4.png" },
+        { img: "./../assets/img/flowers/5.png" },
+        { img: "./../assets/img/flowers/6.png" },
+        { img: "./../assets/img/flowers/7.png" },
+        { img: "./../assets/img/flowers/8.png" },
+        { img: "./../assets/img/flowers/9.png" },
+        { img: "./../assets/img/flowers/10.png" },
       ];
 
       const stones = [
-        { img: "./assets/img/stones/1.png" },
-        { img: "./assets/img/stones/2.png" },
-        { img: "./assets/img/stones/3.png" },
-        { img: "./assets/img/stones/4.png" },
-        { img: "./assets/img/stones/5.png" },
-        { img: "./assets/img/stones/6.png" },
-        { img: "./assets/img/stones/7.png" },
-        { img: "./assets/img/stones/8.png" },
-        { img: "./assets/img/stones/9.png" },
-        { img: "./assets/img/stones/10.png" },
+        { img: "./../assets/img/stones/1.png" },
+        { img: "./../assets/img/stones/2.png" },
+        { img: "./../assets/img/stones/3.png" },
+        { img: "./../assets/img/stones/4.png" },
+        { img: "./../assets/img/stones/5.png" },
+        { img: "./../assets/img/stones/6.png" },
+        { img: "./../assets/img/stones/7.png" },
+        { img: "./../assets/img/stones/8.png" },
+        { img: "./../assets/img/stones/9.png" },
+        { img: "./../assets/img/stones/10.png" },
       ];
 
       const others = [
-        { img: "./assets/img/others/1.png" },
-        { img: "./assets/img/others/2.png" },
-        { img: "./assets/img/others/3.png" },
-        { img: "./assets/img/others/4.png" },
-        { img: "./assets/img/others/5.png" },
-        { img: "./assets/img/others/6.png" },
-        { img: "./assets/img/others/7.png" },
-        { img: "./assets/img/others/8.png" },
-        { img: "./assets/img/others/9.png" },
-        { img: "./assets/img/others/10.png" },
+        { img: "./../assets/img/others/1.png" },
+        { img: "./../assets/img/others/2.png" },
+        { img: "./../assets/img/others/3.png" },
+        { img: "./../assets/img/others/4.png" },
+        { img: "./../assets/img/others/5.png" },
+        { img: "./../assets/img/others/6.png" },
+        { img: "./../assets/img/others/7.png" },
+        { img: "./../assets/img/others/8.png" },
+        { img: "./../assets/img/others/9.png" },
+        { img: "./../assets/img/others/10.png" },
       ];
 
       const gallery = document.getElementById("storeGallery");
@@ -268,6 +266,6 @@
         });
       });
     </script>
-    <script src="./assets/scripts/footer.js"></script>
+    <script src="./../assets/scripts/footer.js"></script>
   </body>
 </html>

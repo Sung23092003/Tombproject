@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <link rel="icon" href="./../assets/img/WC_Logo.png" type="image/png" />
     <title>Virtual Graveyard</title>
-    <link rel="stylesheet" href="./assets/style/global.css" />
-    <link rel="stylesheet" href="./assets/style/components/formFooter.css" />
-    <link rel="stylesheet" href="./assets/style/components/header.css" />
-    <link rel="stylesheet" href="./assets/style/components/footer.css" />
-    <link rel="stylesheet" href="./assets/style/components/new_funeral.css" />
-    <link rel="stylesheet" href="./assets/style/components/store.css" />
-    <link rel="stylesheet" href="./assets/style/pages/store-deceased.css" />
+    <link rel="stylesheet" href="./../assets/style/global.css" />
+    <link rel="stylesheet" href="./../assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./../assets/style/components/header.css" />
+    <link rel="stylesheet" href="./../assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./../assets/style/components/new_funeral.css" />
+    <link rel="stylesheet" href="./../assets/style/components/store.css" />
+    <link rel="stylesheet" href="./../assets/style/pages/store-deceased.css" />
     <link
       rel="stylesheet"
-      href="./assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+      href="./../assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
     <style>
       .store-memory__containt {
@@ -87,14 +87,14 @@
   </head>
 
   <body class="page">
-    <header class="header">
-      <a href="./home.html" class="header__logo">
-        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+ <header class="header">
+      <a href="../home.html" class="header__logo">
+        <img src="./../assets/img/Animals/logo.png" alt="Virtual Grave Logo" />
       </a>
       <div class="header__right">
         <div class="header__menu">
           <div class="navbar__top-row">
-            <a href="#" class="navbar__btn">
+            <a href="./new-burial.html" class="navbar__btn">
               <span class="navbar__btn-icon">+</span> NEW FUNERAL
             </a>
             <div class="navbar__text-links">
@@ -111,11 +111,9 @@
               >GATE</a
             >
             <span class="navbar__divider">|</span>
-         <a href="./board.html" class="navbar__link">BOARD</a>
+            <a  href="./board.html" class="navbar__link">BOARD</a>
             <span class="navbar__divider">|</span>
               <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
-            <span class="navbar__divider">|</span>
-            <a href="./catocombs.html" class="navbar__link">CATACOMBS</a>
           </nav>
         </div>
 
@@ -126,17 +124,17 @@
             <button title="Language">EN</button>
           </div>
 
-          <div class="header__icons-bottom">
-            <span class="cemetery-label">Animals cemetery</span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
+          <a style="text-decoration: none;" href="./home.html" class="header__icons-bottom">
+            <span class="cemetery-label">Cemetery</span>
+            <i class="fa-solid fa-chevron-left"></i>
+          </a>
         </div>
       </div>
     </header>
 
     <main class="page-main main night mt-50">
       <div class="flex wrap">
-        <div class="title mr-100">Store: People</div>
+        <div class="title mr-100">Store: Animals</div>
         <div class="steps flex gap-lg">
           <div class="step">
             <span class="step__number">1</span>
@@ -164,7 +162,7 @@
       </div>
       <div class="flex space-between align-center">
         <h2 class="store__title text-white mt-32">
-          Find the deceased who you want to leave a memory of
+            Find the pet you want to leave a memory for
         </h2>
       </div>
 
@@ -175,7 +173,7 @@
               <div class="store__souvenir"></div>
               <img
                 class="deceased__img"
-                src="./assets/img/deceased/deceased-default.png"
+                src="./../assets/img/deceased/deceased-default.png"
                 alt=""
               />
             </aside>
@@ -336,6 +334,6 @@
       });
     </script>
 
-    <script src="./assets/scripts/footer.js"></script>
+    <script src="./../assets/scripts/footer.js"></script>
   </body>
 </html>
