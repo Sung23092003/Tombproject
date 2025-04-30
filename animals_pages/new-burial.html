@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./../assets/img/WC_Logo.png" type="image/png" />
+    <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./../assets/style/global.css" />
+    <link rel="stylesheet" href="./../assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./../assets/style/components/header.css" />
+    <link rel="stylesheet" href="./../assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./../assets/style/pages/tombstone.css" />
+    <link
+      rel="stylesheet"
+      href="./../assets/style/components/new_funeral.css"
+    />
+    <link rel="stylesheet" href="./../assets/style/pages/new-burial.css" />
+    <link
+      rel="stylesheet"
+      href="./../assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+    />
+  </head>
+  <body class="page">
+    <header class="header">
+      <a href="./home.html" class="header__logo">
+        <img src="./../assets/img/logo.png" alt="Virtual Grave Logo" />
+      </a>
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="#" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
+            </a>
+            <div class="navbar__text-links">
+              <a href="./store-souvenir.html">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="./login.html">SIGN IN</a>
+            </div>
+          </div>
+
+          <nav class="navbar__center">
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
+            <span class="navbar__divider">|</span>
+            <a href="./board.html" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CATACOMBS</a>
+          </nav>
+        </div>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <div class="header__icons-bottom">
+            <span class="cemetery-label">Animals cemetery</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main main night mt-50">
+      <div class="flex wrap">
+        <div class="title mr-100">New funeral</div>
+        <div class="steps flex gap-lg">
+          <div class="step active">
+            <span class="step__number">1</span>
+            <p class="step__des mt-16">Tombstone</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 3 -->
+          <div class="step">
+            <span class="step__number">2</span>
+            <p class="step__des mt-16">Deceased</p>
+          </div>
+          <span class="steps_span">_</span>
+
+          <!-- 5 -->
+          <div class="step">
+            <span class="step__number">3</span>
+            <p class="step__des mt-16">Images</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 6 -->
+          <div class="step">
+            <span class="step__number">4</span>
+            <p class="step__des mt-16">Memory</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 7 -->
+          <div class="step">
+            <span class="step__number">5</span>
+            <p class="step__des mt-16">Summary</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 74px" class="image-section mt-16">
+        <div class="flex space-between w-full">
+          <h2 class="image-section__title">Faith and tombstone</h2>
+          <!-- content -->
+          <div id="filter-container" class="mb-20">
+            <select id="categoryFilter" class="form-select">
+              <option value="all">All categories</option>
+              <option value="Dogs">Dogs</option>
+              <option value="Houses">Houses</option>
+              <option value="Monkeys">Monkeys</option>
+              <option value="Cats">Cats</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="image-section__gallery" id="tombstoneGallery"></div>
+
+        <div class="form-footer w-full mt-32">
+          <a
+            href="#"
+            class="form-footer__btn"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <a
+            href="./deceased.html"
+            class="form-footer__btn form-footer__btn--primary"
+            id="nextBtn"
+          >
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer__links">
+        <a href="./about-us.html">ABOUT US</a>
+        <span class="footer__divider">|</span>
+        <a href="./terms-of-service.html">TERMS OF SERVICE</a>
+        <span class="footer__divider">|</span>
+        <a href="./legal-aspect.html">LEGAL ASPECT</a>
+        <span class="footer__divider">|</span>
+        <a href="./price-list.html">PRICE LIST</a>
+        <span class="footer__divider">|</span>
+        <a href="./psp.html">PSP</a>
+        <span class="footer__divider">|</span>
+        <a href="./history.html">HISTORY</a>
+        <span class="footer__divider">|</span>
+        <a href="./affilation.html">AFFILIATION</a>
+        <span class="footer__divider">|</span>
+        <a href="./contact.html">CONTACT</a>
+        <span class="footer__social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </span>
+      </div>
+      <p class="footer__copyright">
+        All right reserved Virtual Grave &copy; 2025. Design and implementation
+        Cyber.pl
+      </p>
+    </footer>
+    <script>
+      const tombstones = [
+        {
+          img: "./../assets/img/tombstones__animals/1.png",
+          category: "Dogs",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/2.png",
+          category: "Dogs",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/3.png",
+          category: "Dogs",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/4.png",
+          category: "Dogs",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/5.png",
+          category: "Houses",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/6.png",
+          category: "Houses",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/7.png",
+          category: "Houses",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/8.png",
+          category: "Monkeys",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/9.png",
+          category: "Monkeys",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/10.png",
+          category: "Cats",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/11.png",
+          category: "Cats",
+        },
+        {
+          img: "./../assets/img/tombstones__animals/12.png",
+          category: "Cats",
+        },
+      ];
+
+      const gallery = document.getElementById("tombstoneGallery");
+      const filter = document.getElementById("categoryFilter");
+
+      function renderTombstones(category = "all") {
+        gallery.innerHTML = "";
+
+        const filtered =
+          category === "all"
+            ? tombstones
+            : tombstones.filter((t) => t.category === category);
+
+        filtered.forEach((tomb, index) => {
+          const block = document.createElement("div");
+          block.className = "image-section__block";
+          block.dataset.id = `tomb-${index}`;
+          block.innerHTML = `
+              <div class="image-card">
+                <img src="${tomb.img}" alt="Tombstone" />
+              </div>
+            `;
+
+          block.addEventListener("click", () => {
+            document
+              .querySelectorAll(".image-section__block")
+              .forEach((b) => b.classList.remove("selected"));
+            block.classList.add("selected");
+
+            // Lưu đường dẫn ảnh vào localStorage
+            localStorage.setItem("selectedTombstone", tomb.img);
+          });
+
+          gallery.appendChild(block);
+
+          document.getElementById("nextBtn").addEventListener("click", (e) => {
+            const selected = localStorage.getItem("selectedTombstone");
+            if (!selected) {
+              e.preventDefault();
+              alert("Please select a tombstone before proceeding.");
+            }
+          });
+        });
+      }
+
+      filter.addEventListener("change", (e) => {
+        renderTombstones(e.target.value);
+      });
+
+      // Init render
+      renderTombstones();
+    </script>
+    <script src="./../assets/scripts/footer.js"></script>
+  </body>
+</html>

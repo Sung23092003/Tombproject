@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./../assets/img/WC_Logo.png" type="image/png" />
+    <title>Virtual Graveyard</title>
+    <link rel="stylesheet" href="./../assets/style/global.css" />
+    <link rel="stylesheet" href="./../assets/style/components/formFooter.css" />
+    <link rel="stylesheet" href="./../assets/style/components/header.css" />
+    <link rel="stylesheet" href="./../assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./../assets/style/components/new_funeral.css">
+    <link rel="stylesheet" href="./../assets/style/pages/summary.css" />
+    <link
+      rel="stylesheet"
+      href="./../assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
+    />
+    <style>
+        .memory__input {
+          width: 100%;
+          height: 140px;
+        }
+  
+        .memory__input,
+        .memory__input-sm {
+          padding-left: 30px;
+          outline: none;
+          border: 1px solid var(--white);
+          border-radius: 6px;
+          background-color: transparent;
+          color: var(--white);
+        }
+  
+        .input-icon-container:last-child {
+          justify-content: flex-end;
+        }
+  
+        .memory__input-sm {
+          width: 10%;
+          height: 40px;
+        }
+  
+        .input-icon-container {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+  
+        .memory__input-icon {
+          font-size: 20px;
+          color: #999;
+          margin-right: 10px;
+        }
+  
+        .memory__input:focus,
+        .memory__input-sm:focus {
+          border-color: #dc9916;
+        }
+  
+        .memory__input::placeholder,
+        .memory__input-sm::placeholder {
+          color: var(--white);
+          transition: color 0.3s ease;
+        }
+  
+        @media (max-width: 1500px) {
+          .memory__input-sm {
+            width: 20%;
+          }
+        }
+  
+        @media (max-width: 800px) {
+          .memory__input-sm {
+            width: 100%;
+          }
+        }
+      </style>
+  </head>
+  <body class="page">
+    <header class="header">
+      <a href="./home.html" class="header__logo">
+        <img src="./../assets/img/logo.png" alt="Virtual Grave Logo" />
+      </a>
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="#" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
+            </a>
+            <div class="navbar__text-links">
+              <a href="./store-souvenir.html">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="./login.html">SIGN IN</a>
+            </div>
+          </div>
+
+          <nav class="navbar__center">
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
+            <span class="navbar__divider">|</span>
+            <a href="./board.html" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
+            <span class="navbar__divider">|</span>
+            <a href="#" class="navbar__link">CATACOMBS</a>
+          </nav>
+        </div>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <div class="header__icons-bottom">
+            <span class="cemetery-label">Animals cemetery</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main main night mt-50">
+      <div class="flex wrap">
+        <div class="title mr-100">New funeral</div>
+        <div class="steps flex gap-lg">
+          <div class="step">
+            <span class="step__number">1</span>
+            <p class="step__des mt-16">Tombstone</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 3 -->
+          <div class="step">
+            <span class="step__number">2</span>
+            <p class="step__des mt-16">Deceased</p>
+          </div>
+          <span class="steps_span">_</span>
+
+          <!-- 5 -->
+          <div class="step">
+            <span class="step__number">3</span>
+            <p class="step__des mt-16">Images</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 6 -->
+          <div class="step active">
+            <span class="step__number">4</span>
+            <p class="step__des mt-16">Memory</p>
+          </div>
+          <span class="steps_span">_</span>
+          <!-- 7 -->
+          <div class="step">
+            <span class="step__number">5</span>
+            <p class="step__des mt-16">Summary</p>
+          </div>
+        </div>
+      </div>
+      <h2 class="image-section__title text-white mt-32">Memory</h2>
+      <div class="flex-col">
+        <div class="input-icon-container">
+          <i class="fa-solid fa-book memory__input-icon"></i>
+          <input
+            type="text"
+            placeholder="Memory of the deceased"
+            class="memory__input"
+          />
+        </div>
+
+        <div class="input-icon-container">
+          <i class="fa-solid fa-pen memory__input-icon"></i>
+          <input
+            type="text"
+            placeholder="Your signature"
+            class="memory__input-sm"
+          />
+        </div>
+      </div>
+
+        <div class="form-footer w-full mt-32">
+          <a href="./funeral-img.html" class="form-footer__btn">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <a
+            href="./Memory.html"
+            class="form-footer__btn form-footer__btn--primary"
+            id="nextBtn"
+          >
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer__links">
+        <a href="./about-us.html">ABOUT US</a>
+        <span class="footer__divider">|</span>
+        <a href="./terms-of-service.html">TERMS OF SERVICE</a>
+        <span class="footer__divider">|</span>
+        <a href="./legal-aspect.html">LEGAL ASPECT</a>
+        <span class="footer__divider">|</span>
+        <a href="./price-list.html">PRICE LIST</a>
+        <span class="footer__divider">|</span>
+        <a href="./psp.html">PSP</a>
+        <span class="footer__divider">|</span>
+        <a href="./history.html">HISTORY</a>
+        <span class="footer__divider">|</span>
+        <a href="./affilation.html">AFFILIATION</a>
+        <span class="footer__divider">|</span>
+        <a href="./contact.html">CONTACT</a>
+        <span class="footer__social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </span>
+      </div>
+      <p class="footer__copyright">
+        All right reserved Virtual Grave &copy; 2025. Design and implementation
+        Cyber.pl
+      </p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+         // Lấy các input
+         const memoryInput = document.querySelector(".memory__input");
+         const signatureInput = document.querySelector(".memory__input-sm");
+       
+         // Lắng nghe sự kiện khi nhấn Next
+         const nextBtn = document.getElementById("nextBtn");
+         nextBtn.addEventListener("click", function(event) {
+           // Ngừng hành động mặc định của link để tránh chuyển trang trước khi lưu dữ liệu
+           event.preventDefault();
+       
+           // Kiểm tra nếu có dữ liệu trong input
+           if (memoryInput.value.trim() || signatureInput.value.trim()) {
+             const memoryData = {
+               memory: memoryInput.value.trim(),
+               signature: signatureInput.value.trim(),
+             };
+       
+             // Lưu dữ liệu vào localStorage
+             localStorage.setItem("memoryData", JSON.stringify(memoryData));
+           } else {
+             // Nếu không có dữ liệu, xóa dữ liệu cũ trong localStorage
+             localStorage.removeItem("memoryData");
+           }
+       
+           // Chuyển hướng sau khi lưu
+           window.location.href = "/summary.html";
+         });
+       });
+       
+         </script>
+    <script src="./../assets/scripts/footer.js"></script>
+  </body>
+</html>
