@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="assets/img/WC_Logo.png" type="image/png" />
+    <title>Virtual Graveyard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style/global.css" />
+    <link rel="stylesheet" href="./assets/style/components/weather.css" />
+    <link rel="stylesheet" href="./assets/style/components/header.css" />
+    <link rel="stylesheet" href="./assets/style/components/footer.css" />
+    <link rel="stylesheet" href="./assets/style/pages/my-account.css" />
+    <link rel="stylesheet" href="./assets/style/components/manager-funaral.css"/>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__logo">
+        <img src="./assets/img/logo.png" alt="Virtual Grave Logo" />
+      </div>
+      <div class="header__right">
+        <div class="header__menu">
+          <div class="navbar__top-row">
+            <a href="./new-burial.html" class="navbar__btn">
+              <span class="navbar__btn-icon">+</span> NEW FUNERAL
+            </a>
+            <div class="navbar__text-links">
+              <a href="./store-souvenir.html">STORE</a>
+              <span class="navbar__divider">|</span>
+              <a href="#">WEATHER</a>
+              <span class="navbar__divider">|</span>
+              <a href="./my-account.html">My account</a>
+            </div>
+          </div>
+
+          <nav class="navbar__center">
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
+            <span class="navbar__divider">|</span>
+            <a href="./board.html" class="navbar__link">BOARD</a>
+            <span class="navbar__divider">|</span>
+            <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
+            <span class="navbar__divider">|</span>
+            <a href="./catocombs.html" class="navbar__link">CATACOMBS</a>
+          </nav>
+        </div>
+
+        <div class="header__icons">
+          <div class="header__icons-top">
+            <button class="fa-solid fa-magnifying-glass"></button>
+            <button class="fa-solid fa-volume-high"></button>
+            <button title="Language">EN</button>
+          </div>
+
+          <a
+            style="text-decoration: none"
+            href="./animals_pages/home.html"
+            class="header__icons-bottom"
+          >
+            <span class="cemetery-label">Animals cemetery</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="account-page">
+        <div class="account__sidebar">
+          <div class="account__user-info">
+            <div class="user-avatar">tt</div>
+            <div class="user-name">test test</div>
+          </div>
+          <ul class="account__menu">
+            <a style="text-decoration: none" href="./my-account.html"
+              ><li class="active">
+                <i class="fa-solid fa-user"></i> My account
+              </li></a
+            >
+            <li class="has-submenu" id="funeralsToggle">
+              <div class="submenu-header">
+                <i class="fa-solid fa-lock"></i> Funerals
+                <i class="fa-solid fa-chevron-down submenu-icon"></i>
+              </div>
+              <ul class="submenu">
+                <a style="text-decoration: none;" href="./ManagerCemetery.html"><li><i class="fa-solid fa-cross"></i> Cemetery</li></a>
+                <a style="text-decoration: none;" href="./ManagerCatacombs.html"><li><i class="fa-solid fa-dungeon"></i> Catacombs</li></a>
+                <a style="text-decoration: none;" href="./ManagerAnimals.html"><li><i class="fa-solid fa-paw"></i> Animals cemetery</li></a>
+              </ul>
+            </li>
+
+            <li><i class="fa-solid fa-calendar-days"></i> Condolences</li>
+            <li><i class="fa-solid fa-dollar-sign"></i> Transactions</li>
+          </ul>
+        </div>
+        <main class="account__section">
+          <h2>YOUR BURIALS: CEMETERY</h2>
+
+          <div class="search-container">
+            <input
+              type="text"
+              placeholder="Search name, surname or accommodation number"
+            />
+            <button class="btn-save">
+              <i class="fa-solid fa-search"></i> SEARCH
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Lodging no.</th>
+                  <th>Type</th>
+                  <th>Burial places</th>
+                  <th>Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2538</td>
+                  <td>Single</td>
+                  <td>All faiths</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-save">
+                        <i class="fa-solid fa-angle-down"></i> GO TO
+                      </button>
+                      <button class="btn-password">
+                        <i class="fa-solid fa-ellipsis-v"></i> MORE
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer__links">
+        <a href="./about-us.html">ABOUT US</a>
+        <span class="footer__divider">|</span>
+        <a href="./terms-of-service.html">TERMS OF SERVICE</a>
+        <span class="footer__divider">|</span>
+        <a href="./legal-aspect.html">LEGAL ASPECT</a>
+        <span class="footer__divider">|</span>
+        <a href="./price-list.html">PRICE LIST</a>
+        <span class="footer__divider">|</span>
+        <a href="./psp.html">PSP</a>
+        <span class="footer__divider">|</span>
+        <a href="./history.html">HISTORY</a>
+        <span class="footer__divider">|</span>
+        <a href="./affilation.html">AFFILIATION</a>
+        <span class="footer__divider">|</span>
+        <a href="./contact.html">CONTACT</a>
+        <span class="footer__social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </span>
+      </div>
+      <p class="footer__copyright">
+        All right reserved Virtual Grave &copy; 2025. Design and implementation
+        Cyber.pl
+      </p>
+    </footer>
+    <script>
+      const passwordForm = document.getElementById("passwordForm");
+      const changeBtn = document.getElementById("changePasswordBtn");
+      const funeralsToggle = document.getElementById("funeralsToggle");
+      const header = funeralsToggle.querySelector(".submenu-header");
+      const fields = [
+        document.getElementById("currentPassword"),
+        document.getElementById("newPassword"),
+        document.getElementById("repeatPassword"),
+      ];
+
+      header.addEventListener("click", () => {
+        funeralsToggle.classList.toggle("open");
+      });
+
+      fields.forEach((field) => {
+        field.addEventListener("input", () => {
+          const allFilled = fields.every((f) => f.value.trim() !== "");
+          changeBtn.disabled = !allFilled;
+        });
+      });
+    </script>
+    <script src="./assets/scripts/footer.js"></script>
+  </body>
+</html>

@@ -262,6 +262,10 @@
   transform: translateY(-50%);
 }
 
+.mobile-menu__nav{
+  text-decoration: none;
+}
+
 /* hiệu ứng sky */
 @keyframes skyScroll {
   0% {

@@ -1,0 +1,272 @@
+body {
+  background-color: #000;
+}
+
+.main{
+    margin-top: 40px;
+    padding: 0 150px;
+}
+
+.account-page {
+  display: flex;
+  padding: 40px;
+  background-color: #1b1b1b;
+  color: var(--white);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Sidebar */
+.account__sidebar {
+  width: 250px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 30px;
+}
+
+.account__user-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #444;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.user-name {
+  font-size: 16px;
+}
+
+.account__menu {
+  list-style: none;
+  padding: 0;
+}
+
+.account__menu li {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.account__menu li.active,
+.account__menu li:hover {
+  background-color: #f5c144;
+  color: #000;
+  font-weight: bold;
+}
+
+.has-submenu {
+    flex-direction: column;
+  }
+  
+  .submenu-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .submenu-icon {
+    transition: transform 0.3s;
+  }
+  
+  .submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+    display: none;
+    flex-direction: column;
+  }
+  
+  .has-submenu.open .submenu {
+    display: flex;
+  }
+  
+  .has-submenu.open .submenu-icon {
+    transform: rotate(180deg);
+  }
+  
+  .submenu li {
+    padding: 8px;
+    color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submenu li:hover {
+    background-color: #f5c144;
+    color: #000;
+    font-weight: bold;
+  }
+  
+
+/* Main content */
+.account__content {
+  flex: 1;
+  display: flex;
+  gap: 40px;
+}
+
+.account__section {
+  flex: 1;
+}
+
+.account__section h2 {
+  color: #f5c144;
+  margin-bottom: 20px;
+}
+
+.account__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.account__form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.account__form input[type="text"],
+.account__form input[type="email"],
+.account__form input[type="tel"],
+.account__form input[type="password"] {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #333;
+  color: var(--white);
+  margin-top: 8px;
+}
+
+.btn-save{
+    margin-top: 8px;
+}
+
+.btn-save,
+.btn-password {
+  background-color: #f5c144;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+  width: fit-content;
+}
+
+.btn-save:hover,
+.btn-password:hover {
+  background-color: #e0b03d;
+}
+
+.btn-password[disabled] {
+  background-color: #555;
+  cursor: not-allowed;
+  color: #999;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 14px;
+  text-align: left;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.account__form input[type="checkbox"] {
+  accent-color: #f5c144;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.account__form label input[type="checkbox"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .account-page {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .account__sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .account__content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .account__form label {
+    font-size: 13px;
+  }
+
+  .btn-save,
+  .btn-password {
+    width: 100%;
+    text-align: center;
+  }
+
+  .account__menu li {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .user-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__menu,
+  .header__right,
+  .navbar__top-row,
+  .navbar__center,
+  .header__icons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
