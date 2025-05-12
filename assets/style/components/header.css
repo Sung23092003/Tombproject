@@ -90,9 +90,9 @@
   font-size: 14px;
 }
 
-.navbar__link--active {
+/* .navbar__link--active {
   border-bottom: 2px solid var(--primary-color);
-}
+} */
 
 .navbar__divider {
   color: #777;
