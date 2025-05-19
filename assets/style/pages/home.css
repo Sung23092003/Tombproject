@@ -22,7 +22,7 @@
   left: 0;
 }
 
-.sky-rain{
+.sky-rain {
   background: url("../../img/sky/day-rainy.png") repeat-x top center;
   background-size: auto 100%;
   width: 200vw;
@@ -34,7 +34,7 @@
   animation: skyScroll 60s linear infinite;
 }
 
-.sky-snow{
+.sky-snow {
   background: url("../../img/sky/day-snow.png") repeat-x top center;
   background-size: auto 100%;
   width: 200vw;
@@ -140,8 +140,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("../../img/background/sciana.png") no-repeat center center
-    fixed;
+  background: url("../../img/background/sciana.png") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -155,8 +154,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("../../img/background/sciana_snow.png") no-repeat center center
-    fixed;
+  background: url("../../img/background/sciana_snow.png") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -236,7 +234,8 @@
 .page-main__panel {
   flex: 1;
   text-align: center;
-  padding: 16px; /* 1rem = 16px */
+  padding: 16px;
+  /* 1rem = 16px */
 }
 
 /* Thêm lá ở bên trái và phải của main */
@@ -262,7 +261,7 @@
   transform: translateY(-50%);
 }
 
-.mobile-menu__nav{
+.mobile-menu__nav {
   text-decoration: none;
 }
 
@@ -271,6 +270,7 @@
   0% {
     background-position-x: 0;
   }
+
   100% {
     background-position-x: -100vw;
   }
@@ -289,6 +289,7 @@
   0% {
     transform: rotateY(0deg) translateX(0);
   }
+
   100% {
     transform: rotateY(-100deg) translateX(-10vw);
   }
@@ -298,6 +299,7 @@
   0% {
     transform: rotateY(0deg) translateX(0);
   }
+
   100% {
     transform: rotateY(100deg) translateX(10vw);
   }
@@ -332,12 +334,19 @@
 
 /* CSS cho desktop lớn */
 @media (max-width: 1600px) {
+
+  .door-wrapper {
+    transform: translateX(-50%) scale(0.8);
+  }
+
   .image-card-right {
-    right: 200px;
+    top: 500px;
+    right: 310px;
   }
 
   .image-card-left {
-    left: 220px;
+    top: 440px;
+    left: 340px;
   }
 }
 

@@ -25,8 +25,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("../../img/background/scena.png") no-repeat center center
-    fixed;
+  background: url("../../img/background/scena.png") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -97,6 +96,7 @@
   0% {
     transform: rotateY(0deg) translateX(0);
   }
+
   100% {
     transform: rotateY(-100deg) translateX(-10vw);
   }
@@ -106,6 +106,7 @@
   0% {
     transform: rotateY(0deg) translateX(0);
   }
+
   100% {
     transform: rotateY(100deg) translateX(10vw);
   }
@@ -126,4 +127,13 @@
 .page-main--background.zooming {
   transform: scale(3.5);
   transform-origin: center center;
+}
+
+
+/* CSS cho desktop lớn */
+@media (max-width: 1600px) {
+
+  .door-wrapper {
+    transform: translateX(-50%) scale(0.8);
+  }
 }
