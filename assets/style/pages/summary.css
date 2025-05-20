@@ -587,13 +587,13 @@
 }
 
 .animal-3 .tombstone-name {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .animal-3 .tombstone-birth,
 .animal-3 .tombstone-death {
   font-style: italic;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 2px;
   font-weight: 300;
   opacity: 0.8;

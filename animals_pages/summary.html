@@ -9,72 +9,75 @@
     <link rel="stylesheet" href="./../assets/style/components/formFooter.css" />
     <link rel="stylesheet" href="./../assets/style/components/header.css" />
     <link rel="stylesheet" href="./../assets/style/components/footer.css" />
-    <link rel="stylesheet" href="./../assets/style/components/new_funeral.css">
+    <link
+      rel="stylesheet"
+      href="./../assets/style/components/new_funeral.css"
+    />
     <link rel="stylesheet" href="./../assets/style/pages/summary.css" />
     <link
       rel="stylesheet"
       href="./../assets/fonts/fontawesome-free-6.7.2-web/css/all.css"
     />
     <style>
-        .memory__input {
+      .memory__input {
+        width: 100%;
+        height: 140px;
+      }
+
+      .memory__input,
+      .memory__input-sm {
+        padding-left: 30px;
+        outline: none;
+        border: 1px solid var(--white);
+        border-radius: 6px;
+        background-color: transparent;
+        color: var(--white);
+      }
+
+      .input-icon-container:last-child {
+        justify-content: flex-end;
+      }
+
+      .memory__input-sm {
+        width: 10%;
+        height: 40px;
+      }
+
+      .input-icon-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .memory__input-icon {
+        font-size: 20px;
+        color: #999;
+        margin-right: 10px;
+      }
+
+      .memory__input:focus,
+      .memory__input-sm:focus {
+        border-color: #dc9916;
+      }
+
+      .memory__input::placeholder,
+      .memory__input-sm::placeholder {
+        color: var(--white);
+        transition: color 0.3s ease;
+      }
+
+      @media (max-width: 1500px) {
+        .memory__input-sm {
+          width: 20%;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .memory__input-sm {
           width: 100%;
-          height: 140px;
         }
-  
-        .memory__input,
-        .memory__input-sm {
-          padding-left: 30px;
-          outline: none;
-          border: 1px solid var(--white);
-          border-radius: 6px;
-          background-color: transparent;
-          color: var(--white);
-        }
-  
-        .input-icon-container:last-child {
-          justify-content: flex-end;
-        }
-  
-        .memory__input-sm {
-          width: 10%;
-          height: 40px;
-        }
-  
-        .input-icon-container {
-          display: flex;
-          align-items: center;
-          margin-bottom: 20px;
-        }
-  
-        .memory__input-icon {
-          font-size: 20px;
-          color: #999;
-          margin-right: 10px;
-        }
-  
-        .memory__input:focus,
-        .memory__input-sm:focus {
-          border-color: #dc9916;
-        }
-  
-        .memory__input::placeholder,
-        .memory__input-sm::placeholder {
-          color: var(--white);
-          transition: color 0.3s ease;
-        }
-  
-        @media (max-width: 1500px) {
-          .memory__input-sm {
-            width: 20%;
-          }
-        }
-  
-        @media (max-width: 800px) {
-          .memory__input-sm {
-            width: 100%;
-          }
-        }
-      </style>
+      }
+    </style>
   </head>
   <body class="page">
     <header class="header">
@@ -252,7 +255,7 @@
         <span class="footer__divider">|</span>
         <a href="./../price-list.html">PRICE LIST</a>
         <span class="footer__divider">|</span>
-         <a href="./../psp.html">PSP</a>
+        <a href="./../psp.html">PSP</a>
         <span class="footer__divider">|</span>
         <a href="./../history.html">HISTORY</a>
         <span class="footer__divider">|</span>
@@ -272,119 +275,134 @@
       </p>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const deceasedData = JSON.parse(localStorage.getItem("deceasedData"));
-          const selectedTombstone = localStorage.getItem("selectedTombstone");
-          const portraitImage = localStorage.getItem("portraitImage");
-          const memoryData = JSON.parse(localStorage.getItem("memoryData"));
-          const galleryImages = JSON.parse(localStorage.getItem("galleryImages"));
-          const imageCard = document.querySelector(".image-card");
-    
-          if (!imageCard) {
-            console.error("Không tìm thấy phần tử .image-card");
-            return;
+      document.addEventListener("DOMContentLoaded", function () {
+        const deceasedData = JSON.parse(localStorage.getItem("deceasedData"));
+        const selectedTombstone = localStorage.getItem("selectedTombstone");
+        const portraitImage = localStorage.getItem("portraitImage");
+        const memoryData = JSON.parse(localStorage.getItem("memoryData"));
+        const galleryImages = JSON.parse(localStorage.getItem("galleryImages"));
+        const imageCard = document.querySelector(".image-card");
+
+        if (!imageCard) {
+          console.error("Không tìm thấy phần tử .image-card");
+          return;
+        }
+
+        // Xóa cũ
+        imageCard.innerHTML = "";
+
+        // Tạo container
+        const container = document.createElement("div");
+        container.style.display = "flex";
+        container.style.flexDirection = "column";
+        container.style.alignItems = "center";
+        container.style.gap = "20px";
+
+        // Tạo topRow chứa bia mộ và ảnh chân dung
+        const topRow = document.createElement("div");
+        topRow.style.display = "flex";
+        topRow.style.alignItems = "center";
+        topRow.style.gap = "20px";
+
+        // Tạo phần bia mộ
+        if (selectedTombstone && deceasedData) {
+          const imgPreview = document.createElement("div");
+          imgPreview.className = "selected-tombstone mt-32";
+          let tombstoneTextClass = "";
+          const patterns = [{ path: "tombstones__animals", prefix: "animal" }];
+          for (let { path, prefix } of patterns) {
+            for (let i = 1; i <= 12; i++) {
+              if (selectedTombstone.includes(`./assets/img/${path}/${i}.png`)) {
+                tombstoneTextClass = `${prefix}-${i}`;
+                break;
+              }
+            }
+            if (tombstoneTextClass) break;
           }
-    
-          // Xóa cũ
-          imageCard.innerHTML = "";
-    
-          // Tạo container
-          const container = document.createElement("div");
-          container.style.display = "flex";
-          container.style.flexDirection = "column";
-          container.style.alignItems = "center";
-          container.style.gap = "20px";
-    
-          // Tạo topRow chứa bia mộ và ảnh chân dung
-          const topRow = document.createElement("div");
-          topRow.style.display = "flex";
-          topRow.style.alignItems = "center";
-          topRow.style.gap = "20px";
-    
-          // Tạo phần bia mộ
-          if (selectedTombstone && deceasedData) {
-            const tombstoneWrapper = document.createElement("div");
-            tombstoneWrapper.style.position = "relative";
-            tombstoneWrapper.style.width = "300px";
-            tombstoneWrapper.style.height = "auto";
-    
-            const tombstoneImg = document.createElement("img");
-            tombstoneImg.src = selectedTombstone;
-            tombstoneImg.alt = "Tombstone Image";
-            tombstoneImg.style.width = "100%";
-            tombstoneImg.style.height = "auto";
-            tombstoneImg.style.display = "block";
-    
-            const textOverlay = document.createElement("div");
-            textOverlay.className = "textOverlay";
-            const pronoun = deceasedData.gender === "male" ? "He" : "She";
-    
-            textOverlay.innerHTML = `
-          <div style="font-size: 20px;">${deceasedData.name} ${deceasedData.surname}</div>
-    <div style="font-size: 16px; margin-top: 20px;">Born: ${deceasedData.birthDate}</div>
-    <div style="font-size: 16px; margin-top: 20px;">${pronoun} died on: ${deceasedData.deathDate}</div>
+
+          const tombstoneWrapper = document.createElement("div");
+          tombstoneWrapper.style.position = "relative";
+          tombstoneWrapper.style.width = "300px";
+          tombstoneWrapper.style.height = "auto";
+          tombstoneWrapper.classList.add(tombstoneTextClass);
+
+          const tombstoneImg = document.createElement("img");
+          tombstoneImg.src = selectedTombstone;
+          tombstoneImg.alt = "Tombstone Image";
+          tombstoneImg.style.width = "100%";
+          tombstoneImg.style.height = "auto";
+          tombstoneImg.style.display = "block";
+
+          const textOverlay = document.createElement("div");
+          textOverlay.className = "textOverlay";
+          const pronoun = deceasedData.gender === "male" ? "He" : "She";
+
+          textOverlay.innerHTML = `
+           <div class="tombstone-name">${deceasedData.name} ${deceasedData.surname}</div>
+<div class="tombstone-birth">Born: </br>${deceasedData.birthDate}</div>
+<div class="tombstone-death">${pronoun} died on: </br> ${deceasedData.deathDate}</div>
         `;
-    
-            tombstoneWrapper.appendChild(tombstoneImg);
-            tombstoneWrapper.appendChild(textOverlay);
-    
-            // Thêm bia mộ vào topRow
-            topRow.appendChild(tombstoneWrapper);
-          }
-    
-          // Thêm ảnh chân dung
-          if (portraitImage) {
-            const portraitImg = document.createElement("img");
-            portraitImg.src = portraitImage;
-            portraitImg.alt = "Portrait Image";
-            portraitImg.style.width = "250px";
-            portraitImg.style.height = "auto";
-            portraitImg.style.cursor = "pointer";
-            portraitImg.style.objectFit = "cover";
-            portraitImg.style.borderRadius = "8px";
-            topRow.appendChild(portraitImg);
-          }
-    
-          // Thêm topRow vào container
-          container.appendChild(topRow);
-    
-          // Thêm block giống MEMORY (bên dưới)
-          if (deceasedData) {
-            const tombstoneTextBlock = document.createElement("div");
-            tombstoneTextBlock.style.backgroundColor = "#1E1E1E";
-            tombstoneTextBlock.style.marginTop = "20px";
-            tombstoneTextBlock.style.width = "100%";
-            tombstoneTextBlock.style.padding = "27px 12px";
-            tombstoneTextBlock.style.color = "white";
-    
-            const pronoun = deceasedData.gender === "male" ? "He" : "She";
-    
-            tombstoneTextBlock.innerHTML = `
+
+          tombstoneWrapper.appendChild(tombstoneImg);
+          tombstoneWrapper.appendChild(textOverlay);
+
+          // Thêm bia mộ vào topRow
+          topRow.appendChild(tombstoneWrapper);
+        }
+
+        // Thêm ảnh chân dung
+        if (portraitImage) {
+          const portraitImg = document.createElement("img");
+          portraitImg.src = portraitImage;
+          portraitImg.alt = "Portrait Image";
+          portraitImg.style.width = "250px";
+          portraitImg.style.height = "auto";
+          portraitImg.style.cursor = "pointer";
+          portraitImg.style.objectFit = "cover";
+          portraitImg.style.borderRadius = "8px";
+          topRow.appendChild(portraitImg);
+        }
+
+        // Thêm topRow vào container
+        container.appendChild(topRow);
+
+        // Thêm block giống MEMORY (bên dưới)
+        if (deceasedData) {
+          const tombstoneTextBlock = document.createElement("div");
+          tombstoneTextBlock.style.backgroundColor = "#1E1E1E";
+          tombstoneTextBlock.style.marginTop = "20px";
+          tombstoneTextBlock.style.width = "100%";
+          tombstoneTextBlock.style.padding = "27px 12px";
+          tombstoneTextBlock.style.color = "white";
+
+          const pronoun = deceasedData.gender === "male" ? "He" : "She";
+
+          tombstoneTextBlock.innerHTML = `
           <div style="font-weight: 800; font-size: 20px; border-bottom: 1px solid #fff; padding: 6px 0;">
             ${deceasedData.name} ${deceasedData.surname} "${
-              deceasedData.other || ""
-            }"
+            deceasedData.other || ""
+          }"
           </div>
           <div style="font-size: 18px; font-weight: 300; margin-top: 4px;">
             Born: ${deceasedData.birthDate} | ${pronoun} died on: ${
-              deceasedData.deathDate
-            }
+            deceasedData.deathDate
+          }
           </div>
         `;
-    
-            container.appendChild(tombstoneTextBlock);
-          }
-    
-          // Thêm MEMORY block
-          if (memoryData) {
-            const memoryBlock = document.createElement("div");
-            memoryBlock.style.backgroundColor = "#1E1E1E";
-            memoryBlock.style.marginTop = "20px";
-            memoryBlock.style.width = "100%";
-            memoryBlock.style.padding = "27px 12px";
-            memoryBlock.style.color = "white";
-    
-            memoryBlock.innerHTML = `
+
+          container.appendChild(tombstoneTextBlock);
+        }
+
+        // Thêm MEMORY block
+        if (memoryData) {
+          const memoryBlock = document.createElement("div");
+          memoryBlock.style.backgroundColor = "#1E1E1E";
+          memoryBlock.style.marginTop = "20px";
+          memoryBlock.style.width = "100%";
+          memoryBlock.style.padding = "27px 12px";
+          memoryBlock.style.color = "white";
+
+          memoryBlock.innerHTML = `
           <div style="font-weight: 800; font-size: 20px; border-bottom: 1px solid #fff; padding: 6px 0;">MEMORY</div>
           <div style="font-size: 18px; font-weight: 300; margin-top: 8px;">
             ${memoryData.memory}
@@ -393,77 +411,77 @@
             ${memoryData.signature}
           </div>
         `;
-    
-            container.appendChild(memoryBlock);
-          }
-    
-          // Thêm GALLERY block
-          if (galleryImages && galleryImages.length > 0) {
-            const galleryBlock = document.createElement("div");
-            galleryBlock.style.marginTop = "20px";
-            galleryBlock.style.width = "100%";
-            galleryBlock.style.padding = "27px 12px";
-            galleryBlock.style.color = "white";
-    
-            const galleryTitle = document.createElement("div");
-            galleryTitle.style.fontSize = "20px";
-            galleryTitle.style.padding = "6px 0";
-            galleryTitle.style.fontWeight = "800";
-            galleryTitle.textContent = "GALLERY";
-            galleryBlock.appendChild(galleryTitle);
-    
-            const galleryGrid = document.createElement("div");
-            galleryGrid.style.display = "grid";
-            galleryGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
-            galleryGrid.style.gap = "10px";
-            galleryGrid.style.marginTop = "12px";
-    
-            galleryImages.forEach((imgSrc) => {
-              const imgWrapper = document.createElement("div");
-              imgWrapper.style.width = "100%";
-              imgWrapper.style.aspectRatio = "1 / 1";
-              imgWrapper.style.overflow = "hidden";
-              imgWrapper.style.borderRadius = "8px";
-    
-              const img = document.createElement("img");
-              img.src = imgSrc;
-              img.alt = "Gallery Image";
-              img.style.width = "100%";
-              img.style.height = "100%";
-              img.style.objectFit = "cover";
-              img.style.display = "block";
-    
-              imgWrapper.appendChild(img);
-              galleryGrid.appendChild(imgWrapper);
-            });
-    
-            galleryBlock.appendChild(galleryGrid);
-            container.appendChild(galleryBlock);
-          }
-    
-          // Cuối cùng append container vào imageCard
-          imageCard.appendChild(container);
-        });
-    
-        // Xử lý chọn gói thanh toán
-        document.querySelectorAll(".pay-card").forEach((card) => {
-          card.addEventListener("click", () => {
-            // Bỏ chọn tất cả thẻ trước đó
-            document.querySelectorAll(".pay-card").forEach((c) => {
-              c.classList.remove("selected");
-              c.querySelector(".pay-card__btn").classList.remove("selected");
-              c.querySelector(".pay-card__btn").textContent = "CHOOSE";
-            });
-    
-            // Thêm class đã chọn
-            card.classList.add("selected");
-            const btn = card.querySelector(".pay-card__btn");
-            btn.classList.add("selected");
-            btn.textContent = "CHOSEN ✓";
+
+          container.appendChild(memoryBlock);
+        }
+
+        // Thêm GALLERY block
+        if (galleryImages && galleryImages.length > 0) {
+          const galleryBlock = document.createElement("div");
+          galleryBlock.style.marginTop = "20px";
+          galleryBlock.style.width = "100%";
+          galleryBlock.style.padding = "27px 12px";
+          galleryBlock.style.color = "white";
+
+          const galleryTitle = document.createElement("div");
+          galleryTitle.style.fontSize = "20px";
+          galleryTitle.style.padding = "6px 0";
+          galleryTitle.style.fontWeight = "800";
+          galleryTitle.textContent = "GALLERY";
+          galleryBlock.appendChild(galleryTitle);
+
+          const galleryGrid = document.createElement("div");
+          galleryGrid.style.display = "grid";
+          galleryGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
+          galleryGrid.style.gap = "10px";
+          galleryGrid.style.marginTop = "12px";
+
+          galleryImages.forEach((imgSrc) => {
+            const imgWrapper = document.createElement("div");
+            imgWrapper.style.width = "100%";
+            imgWrapper.style.aspectRatio = "1 / 1";
+            imgWrapper.style.overflow = "hidden";
+            imgWrapper.style.borderRadius = "8px";
+
+            const img = document.createElement("img");
+            img.src = imgSrc;
+            img.alt = "Gallery Image";
+            img.style.width = "100%";
+            img.style.height = "100%";
+            img.style.objectFit = "cover";
+            img.style.display = "block";
+
+            imgWrapper.appendChild(img);
+            galleryGrid.appendChild(imgWrapper);
           });
+
+          galleryBlock.appendChild(galleryGrid);
+          container.appendChild(galleryBlock);
+        }
+
+        // Cuối cùng append container vào imageCard
+        imageCard.appendChild(container);
+      });
+
+      // Xử lý chọn gói thanh toán
+      document.querySelectorAll(".pay-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          // Bỏ chọn tất cả thẻ trước đó
+          document.querySelectorAll(".pay-card").forEach((c) => {
+            c.classList.remove("selected");
+            c.querySelector(".pay-card__btn").classList.remove("selected");
+            c.querySelector(".pay-card__btn").textContent = "CHOOSE";
+          });
+
+          // Thêm class đã chọn
+          card.classList.add("selected");
+          const btn = card.querySelector(".pay-card__btn");
+          btn.classList.add("selected");
+          btn.textContent = "CHOSEN ✓";
         });
-      </script>
-    
+      });
+    </script>
+
     <script src="./../assets/scripts/footer.js"></script>
   </body>
 </html>
