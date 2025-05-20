@@ -460,3 +460,235 @@ input[type="checkbox"] {
   font-weight: 300;
   opacity: 0.8;
 }
+
+/* animal */
+/* ảnh 1 */
+.animal-1 #tombstoneText {
+  bottom: 34%;
+  color: #000;
+}
+
+.animal-1 .tombstone-name {
+  font-size: 18px;
+}
+
+.animal-1 .tombstone-birth,
+.animal-1 .tombstone-death {
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 2 */
+.animal-2 #tombstoneText {
+  bottom: 50%;
+  left: 14%;
+  color: #000;
+}
+
+.animal-2 .tombstone-name {
+  font-size: 18px;
+}
+
+.animal-2 .tombstone-birth,
+.animal-2 .tombstone-death {
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 3 */
+.animal-3 #tombstoneText {
+  font-style: italic;
+  bottom: 66%;
+  left: 14%;
+  color: #000;
+}
+
+.animal-3 .tombstone-name {
+  font-size: 14px;
+}
+
+.animal-3 .tombstone-birth,
+.animal-3 .tombstone-death {
+  font-style: italic;
+  font-size: 10px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 4 */
+.animal-4 #tombstoneText {
+  bottom: 42%;
+  color: #dbd7d7;
+}
+
+.animal-4 .tombstone-name {
+  font-size: 20px;
+}
+
+.animal-4 .tombstone-birth,
+.animal-4 .tombstone-death {
+  font-style: italic;
+  font-size: 16px;
+  margin-top: 2px;
+  font-weight: 300;
+}
+
+/* ảnh 5 */
+.animal-5 #tombstoneText {
+  font-style: italic;
+  bottom: 28%;
+  left: -20%;
+  color: #000;
+}
+
+.animal-5 .tombstone-name {
+  font-size: 14px;
+}
+
+.animal-5 .tombstone-birth,
+.animal-5 .tombstone-death {
+  font-style: italic;
+  font-size: 10px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+
+/* ảnh 6 */
+.animal-6 #tombstoneText {
+  bottom: 34%;
+  left: -26%;
+  color: #000;
+}
+
+.animal-6 .tombstone-name {
+  font-size: 12px;
+}
+
+.animal-6 .tombstone-birth,
+.animal-6 .tombstone-death {
+  font-size: 9px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 7 */
+.animal-7 #tombstoneText {
+  bottom: 32%;
+  left: -1%;
+  color: #000;
+}
+
+.animal-7 .tombstone-name {
+  font-size: 12px;
+}
+
+.animal-7 .tombstone-birth,
+.animal-7 .tombstone-death {
+  font-size: 9px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 8 */
+.animal-8 #tombstoneText {
+  bottom: 56%;
+  left: 15%;
+  color: #000;
+}
+
+.animal-8 .tombstone-name {
+  font-size: 18px;
+}
+
+.animal-8 .tombstone-birth,
+.animal-8 .tombstone-death {
+  font-size: 14px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 9 */
+.animal-9 #tombstoneText {
+  bottom: 46%;
+  left: 20%;
+  color: #000;
+}
+
+.animal-9 .tombstone-name {
+  font-size: 14px;
+}
+
+.animal-9 .tombstone-birth,
+.animal-9 .tombstone-death {
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 10 */
+.animal-10 #tombstoneText {
+  bottom: 46%;
+  left: 16%;
+  color: #000;
+}
+
+.animal-10 .tombstone-name {
+  font-size: 14px;
+}
+
+.animal-10 .tombstone-birth,
+.animal-10 .tombstone-death {
+  font-size: 11px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 11 */
+.animal-11 #tombstoneText {
+  bottom: 52%;
+  left: 19%;
+  color: #000;
+}
+
+.animal-11 .tombstone-name {
+  font-size: 16px;
+}
+
+.animal-11 .tombstone-birth,
+.animal-11 .tombstone-death {
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ảnh 12 */
+.animal-12 #tombstoneText {
+  bottom: 56%;
+  left: 19%;
+  color: #000;
+}
+
+.animal-12 .tombstone-name {
+  font-size: 16px;
+}
+
+.animal-12 .tombstone-birth,
+.animal-12 .tombstone-death {
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}

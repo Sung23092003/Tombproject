@@ -170,11 +170,11 @@
               </div>
 
               <div class="custom-check mt-32">
-                <label style="display: none;">
+                <label style="display: none">
                   <input type="checkbox" name="isVeteran" />
                   I want to generate an obituary
                 </label>
-                <label style="display: none;" class="mt-16">
+                <label style="display: none" class="mt-16">
                   <input type="checkbox" name="hasGraveStone" />
                   I agree to the one-time publication of the obituary on the
                   Facebook social network by the Virtual Cemetery.
@@ -211,7 +211,7 @@
         <span class="footer__divider">|</span>
         <a href="./../price-list.html">PRICE LIST</a>
         <span class="footer__divider">|</span>
-         <a href="./../psp.html">PSP</a>
+        <a href="./../psp.html">PSP</a>
         <span class="footer__divider">|</span>
         <a href="./../history.html">HISTORY</a>
         <span class="footer__divider">|</span>
@@ -247,12 +247,25 @@
       if (selectedImg) {
         const imgPreview = document.createElement("div");
         imgPreview.className = "selected-tombstone mt-32";
+        let tombstoneTextClass = "";
+        const patterns = [{ path: "tombstones__animals", prefix: "animal" }];
+
+        for (let { path, prefix } of patterns) {
+          for (let i = 1; i <= 12; i++) {
+            if (selectedImg.includes(`./assets/img/${path}/${i}.png`)) {
+              tombstoneTextClass = `${prefix}-${i}`;
+              break;
+            }
+          }
+          if (tombstoneTextClass) break;
+        }
+
         imgPreview.innerHTML = `
-            <div class="image-card">
-              <img src="${selectedImg}" alt="Selected Tombstone" />
-              <div id="tombstoneText" class="tombstone-text"></div>
-            </div>
-          `;
+        <div class="image-card ${tombstoneTextClass}">
+          <img src="${selectedImg}" alt="Selected Tombstone" />
+          <div id="tombstoneText" class="tombstone-text"></div>
+        </div>
+      `;
         document.querySelector(".render").prepend(imgPreview);
       }
 
@@ -269,13 +282,13 @@
         const tombstoneTextDiv = document.getElementById("tombstoneText");
         if (tombstoneTextDiv) {
           tombstoneTextDiv.innerHTML = `
-              <div style="font-size: 20px; color: #000;">${name} </div>
-              <div style="font-size: 18px; color: #333; font-weight: 300; margin-top: 4px;">
-                born: <br/> ${birthDate}
-              </div>
-              <div style="font-size: 16px; margin-top: 4px; color: #333; font-weight: 300;">
-                ${pronoun} died on: <br/> ${deathDate}
-              </div>
+              <div class="tombstone-name">${name} </div>
+             <div class="tombstone-birth">
+            born: <br/> ${birthDate}
+          </div>
+          <div class="tombstone-death">
+            ${pronoun} died on: <br/> ${deathDate}
+          </div>
             `;
         }
       }
