@@ -76,10 +76,18 @@
         display: flex;
         gap: 20px;
         overflow: hidden;
+        width: 900px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
       }
 
       .carousel-item {
-        width: 300px;
+        width: 200px;
+        margin-left: 22px;
         height: auto;
         border-radius: 8px;
         overflow: hidden;
@@ -180,7 +188,9 @@
 
     <section class="tombstone-carousel">
       <button id="prevBtn" class="carousel-btn">&larr;</button>
-      <div id="carouselItems" class="carousel-items"></div>
+      <div id="carouselItems" class="carousel-items">
+        <div id="carouselTrack" class="carousel-track"></div>
+      </div>
       <button id="nextBtn" class="carousel-btn">&rarr;</button>
     </section>
 
@@ -194,7 +204,7 @@
         <span class="footer__divider">|</span>
         <a href="./../price-list.html">PRICE LIST</a>
         <span class="footer__divider">|</span>
-         <a href="./../psp.html">PSP</a>
+        <a href="./../psp.html">PSP</a>
         <span class="footer__divider">|</span>
         <a href="./../history.html">HISTORY</a>
         <span class="footer__divider">|</span>
@@ -221,7 +231,7 @@
         if (document.querySelector(".sky-snow")) {
           interior.style.background =
             'url(".././assets/img/background/scena2__snow.png") no-repeat center center';
-        }else{
+        } else {
           interior.style.background =
             'url(".././assets/img/background/scena2.png") no-repeat center center';
         }
@@ -245,10 +255,14 @@
         }
       }
 
+      const carouselTrack = document.getElementById("carouselTrack");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
       //
-      const tombstoneImages = [
+      const items = [
         ".././assets/img/cemetery__animals/1.png",
-        ".././assets/img/cemetery__animals/1.png",
+        ".././assets/img/cemetery__animals/7.png",
         ".././assets/img/cemetery__animals/3.png",
         ".././assets/img/cemetery__animals/4.png",
         ".././assets/img/cemetery__animals/4.png",
@@ -260,40 +274,40 @@
 
       let currentIndex = 0;
 
-      function renderCarousel() {
-        const container = document.getElementById("carouselItems");
-        container.innerHTML = "";
+      const itemWidth = 180;
+      const visibleItems = 3;
 
-        for (
-          let i = currentIndex;
-          i < currentIndex + 3 && i < tombstoneImages.length;
-          i++
-        ) {
+      function renderItems() {
+        items.forEach((src) => {
           const item = document.createElement("div");
           item.className = "carousel-item";
           const img = document.createElement("img");
-          img.src = tombstoneImages[i];
-          img.alt = `Tombstone ${i + 1}`;
+          img.src = src;
           item.appendChild(img);
-          container.appendChild(item);
-        }
+          carouselTrack.appendChild(item);
+        });
       }
 
-      document.getElementById("prevBtn").addEventListener("click", () => {
-        if (currentIndex >= 3) {
-          currentIndex -= 3;
-          renderCarousel();
+      function updateCarousel() {
+        const offset = -currentIndex * itemWidth;
+        carouselTrack.style.transform = `translateX(${offset}px)`;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
         }
       });
 
-      document.getElementById("nextBtn").addEventListener("click", () => {
-        if (currentIndex + 3 < tombstoneImages.length) {
-          currentIndex += 3;
-          renderCarousel();
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < items.length - visibleItems) {
+          currentIndex++;
+          updateCarousel();
         }
       });
 
-      renderCarousel();
+      renderItems();
     </script>
     <script src="./../assets/scripts/weather.js"></script>
     <script src=".././assets/scripts/footer.js"></script>
