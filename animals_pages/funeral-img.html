@@ -105,61 +105,63 @@
       </div>
       <div style="margin-bottom: 74px" class="image-section mt-16">
         <div class="funeral-container">
-            <div class="upload-section">
-              <div class="portrait-upload">
-                <h3 class="image-section__title text-white">ADD PORTRAIT IMAGE</h3>
-                <div id="portraitUploadBox" class="upload-box-xl">
+          <div class="upload-section">
+            <div class="portrait-upload">
+              <h3 class="image-section__title text-white">
+                ADD PORTRAIT IMAGE
+              </h3>
+              <div id="portraitUploadBox" class="upload-box-xl">
+                Click to select, or drag the image over to this field<br /><br />Files
+                .png, .jpg, .gif<br />Size up to 5.0 MiB
+              </div>
+              <input
+                type="file"
+                id="portraitInput"
+                accept="image/*"
+                style="display: none"
+              />
+            </div>
+
+            <div class="gallery-upload">
+              <h3 class="image-section__title text-white">
+                ADD PHOTOS TO GALLERY
+              </h3>
+              <div class="gallery-grid">
+                <div id="portraitUploadBox" class="upload-box">
                   Click to select, or drag the image over to this field<br /><br />Files
                   .png, .jpg, .gif<br />Size up to 5.0 MiB
                 </div>
-                <input
-                  type="file"
-                  id="portraitInput"
-                  accept="image/*"
-                  style="display: none"
-                />
-              </div>
-    
-              <div class="gallery-upload">
-                <h3 class="image-section__title text-white">
-                  ADD PHOTOS TO GALLERY
-                </h3>
-                <div class="gallery-grid">
-                  <div id="portraitUploadBox" class="upload-box">
-                    Click to select, or drag the image over to this field<br /><br />Files
-                    .png, .jpg, .gif<br />Size up to 5.0 MiB
-                  </div>
-                  <div id="portraitUploadBox" class="upload-box">
-                    Click to select, or drag the image over to this field<br /><br />Files
-                    .png, .jpg, .gif<br />Size up to 5.0 MiB
-                  </div>
-                  <div id="portraitUploadBox" class="upload-box">
-                    Click to select, or drag the image over to this field<br /><br />Files
-                    .png, .jpg, .gif<br />Size up to 5.0 MiB
-                  </div>
-                  <div id="portraitUploadBox" class="upload-box">
-                    Click to select, or drag the image over to this field<br /><br />Files
-                    .png, .jpg, .gif<br />Size up to 5.0 MiB
-                  </div>
-                  <div id="portraitUploadBox" class="upload-box">
-                    Click to select, or drag the image over to this field<br /><br />Files
-                    .png, .jpg, .gif<br />Size up to 5.0 MiB
-                  </div>
-                  <div id="portraitUploadBox" class="upload-box">
-                    Click to select, or drag the image over to this field<br /><br />Files
-                    .png, .jpg, .gif<br />Size up to 5.0 MiB
-                  </div>
+                <div id="portraitUploadBox" class="upload-box">
+                  Click to select, or drag the image over to this field<br /><br />Files
+                  .png, .jpg, .gif<br />Size up to 5.0 MiB
                 </div>
-                <input
-                  type="file"
-                  class="galleryInput"
-                  accept="image/*"
-                  style="display: none"
-                  multiple
-                />
+                <div id="portraitUploadBox" class="upload-box">
+                  Click to select, or drag the image over to this field<br /><br />Files
+                  .png, .jpg, .gif<br />Size up to 5.0 MiB
+                </div>
+                <div id="portraitUploadBox" class="upload-box">
+                  Click to select, or drag the image over to this field<br /><br />Files
+                  .png, .jpg, .gif<br />Size up to 5.0 MiB
+                </div>
+                <div id="portraitUploadBox" class="upload-box">
+                  Click to select, or drag the image over to this field<br /><br />Files
+                  .png, .jpg, .gif<br />Size up to 5.0 MiB
+                </div>
+                <div id="portraitUploadBox" class="upload-box">
+                  Click to select, or drag the image over to this field<br /><br />Files
+                  .png, .jpg, .gif<br />Size up to 5.0 MiB
+                </div>
               </div>
+              <input
+                type="file"
+                class="galleryInput"
+                accept="image/*"
+                style="display: none"
+                multiple
+              />
             </div>
           </div>
+        </div>
 
         <div class="image-section__gallery" id="tombstoneGallery"></div>
 
@@ -188,7 +190,7 @@
         <span class="footer__divider">|</span>
         <a href="./../price-list.html">PRICE LIST</a>
         <span class="footer__divider">|</span>
-         <a href="./../psp.html">PSP</a>
+        <a href="./../psp.html">PSP</a>
         <span class="footer__divider">|</span>
         <a href="./../history.html">HISTORY</a>
         <span class="footer__divider">|</span>
@@ -208,78 +210,86 @@
       </p>
     </footer>
     <script>
-        // Hàm chuyển file thành Base64
-    function fileToBase64(file) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result); // Base64 kết quả
-        reader.onerror = reject;
-        reader.readAsDataURL(file); // Đọc file dưới dạng DataURL (base64)
+      // Hàm chuyển file thành Base64
+      function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result); // Base64 kết quả
+          reader.onerror = reject;
+          reader.readAsDataURL(file); // Đọc file dưới dạng DataURL (base64)
+        });
+      }
+
+      // PORTRAIT
+      const portraitBox = document.getElementById("portraitUploadBox");
+      const portraitInput = document.getElementById("portraitInput");
+
+      // GALLERY
+      const galleryBoxes = document.querySelectorAll(".upload-box");
+      const galleryInput = document.querySelector(".galleryInput");
+
+      let portraitImage = null;
+      let galleryImages = [];
+
+      // Lưu ảnh portrait
+      portraitBox.addEventListener("click", () => {
+        portraitInput.click();
       });
-    }
-    
-    // PORTRAIT
-    const portraitBox = document.getElementById("portraitUploadBox");
-    const portraitInput = document.getElementById("portraitInput");
-    
-    // GALLERY
-    const galleryBoxes = document.querySelectorAll(".upload-box");
-    const galleryInput = document.querySelector(".galleryInput");
-    
-    let portraitImage = null;
-    let galleryImages = [];
-    
-    // Lưu ảnh portrait
-    portraitBox.addEventListener("click", () => {
-      portraitInput.click();
-    });
-    
-    portraitInput.addEventListener("change", async (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        portraitImage = await fileToBase64(file); // <-- chuyển sang base64
-        portraitBox.innerHTML = `<p>${file.name}</p>`;
-      }
-    });
-    
-    // Lưu ảnh gallery
-    galleryBoxes.forEach((box, index) => {
-      box.addEventListener("click", () => {
-        galleryInput.click();
-        galleryInput.setAttribute("data-target", index);
+      
+      portraitInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          try {
+            const base64 = await fileToBase64(file);
+            localStorage.setItem("portraitImage", base64);
+            portraitImage = base64;
+            console.log("Ảnh chân dung đã lưu vào localStorage");
+          } catch (err) {
+            console.error("Lỗi khi đọc file:", err);
+          }
+        }
       });
-    });
-    
-    galleryInput.addEventListener("change", async (e) => {
-      const files = e.target.files;
-      const targetIndex = galleryInput.getAttribute("data-target");
-      if (files.length && targetIndex !== null) {
-        const base64 = await fileToBase64(files[0]); // <-- chuyển sang base64
-        galleryImages[targetIndex] = base64;
-        const box = galleryBoxes[targetIndex];
-        box.innerHTML = `<p>${files[0].name}</p>`;
-      }
-    });
-    
-    // Khi nhấn Next
-    const nextBtn = document.getElementById("nextBtn");
-    nextBtn.addEventListener("click", () => {
-      if (portraitImage || galleryImages.length) {
-        if (portraitImage) {
-          localStorage.setItem("portraitImage", portraitImage);
+
+      // Lưu ảnh gallery
+      galleryBoxes.forEach((box, index) => {
+        box.addEventListener("click", () => {
+          galleryInput.click();
+          galleryInput.setAttribute("data-target", index);
+        });
+      });
+
+      galleryInput.addEventListener("change", async (e) => {
+        const files = e.target.files;
+        const targetIndex = galleryInput.getAttribute("data-target");
+        if (files.length && targetIndex !== null) {
+          const base64 = await fileToBase64(files[0]); // <-- chuyển sang base64
+          galleryImages[targetIndex] = base64;
+          const box = galleryBoxes[targetIndex];
+          box.innerHTML = `<p>${files[0].name}</p>`;
         }
-        if (galleryImages.length) {
-          localStorage.setItem("galleryImages", JSON.stringify(galleryImages));
+      });
+
+      // Khi nhấn Next
+      const nextBtn = document.getElementById("nextBtn");
+      nextBtn.addEventListener("click", () => {
+        if (portraitImage || galleryImages.length) {
+          if (portraitImage) {
+            localStorage.setItem("portraitImage", portraitImage);
+          }
+          if (galleryImages.length) {
+            localStorage.setItem(
+              "galleryImages",
+              JSON.stringify(galleryImages)
+            );
+          }
+        } else {
+          localStorage.removeItem("portraitImage");
+          localStorage.removeItem("galleryImages");
         }
-      } else {
-        localStorage.removeItem("portraitImage");
-        localStorage.removeItem("galleryImages");
-      }
-    
-      window.location.href = "./Memory.html";
-    });
-    
-      </script>
+
+        window.location.href = "./Memory.html";
+      });
+    </script>
     <script src="./../assets/scripts/footer.js"></script>
   </body>
 </html>

@@ -38,11 +38,13 @@
           </div>
 
           <nav class="navbar__center">
-            <a href="./home.html" class="navbar__link navbar__link--active">GATE</a>
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
             <span class="navbar__divider">|</span>
-         <a href="./board.html" class="navbar__link">BOARD</a>
+            <a href="./board.html" class="navbar__link">BOARD</a>
             <span class="navbar__divider">|</span>
-              <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
+            <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
             <span class="navbar__divider">|</span>
             <a href="./catocombs.html" class="navbar__link">CATACOMBS</a>
           </nav>
@@ -254,10 +256,30 @@
 
       // Tạo phần bia mộ
       if (selectedTombstone && deceasedData) {
+        const imgPreview = document.createElement("div");
+        imgPreview.className = "selected-tombstone mt-32";
+        let tombstoneTextClass = "";
+        const patterns = [
+          { path: "tombstones", prefix: "tombstone" },
+          { path: "tombstones-family", prefix: "tombstone-family" },
+          { path: "catabombs", prefix: "catacomb" },
+        ];
+
+        for (let { path, prefix } of patterns) {
+          for (let i = 1; i <= 8; i++) {
+            if (selectedTombstone.includes(`./assets/img/${path}/${i}.png`)) {
+              tombstoneTextClass = `${prefix}-${i}`;
+              break;
+            }
+          }
+          if (tombstoneTextClass) break;
+        }
+
         const tombstoneWrapper = document.createElement("div");
         tombstoneWrapper.style.position = "relative";
         tombstoneWrapper.style.width = "300px";
         tombstoneWrapper.style.height = "auto";
+        tombstoneWrapper.classList.add(tombstoneTextClass);
 
         const tombstoneImg = document.createElement("img");
         tombstoneImg.src = selectedTombstone;
@@ -271,10 +293,10 @@
         const pronoun = deceasedData.gender === "male" ? "He" : "She";
 
         textOverlay.innerHTML = `
-      <div style="font-size: 20px;">${deceasedData.name} ${deceasedData.surname}</div>
-<div style="font-size: 16px; margin-top: 20px;">Born: ${deceasedData.birthDate}</div>
-<div style="font-size: 16px; margin-top: 20px;">${pronoun} died on: ${deceasedData.deathDate}</div>
-    `;
+      <div class="tombstone-name">${deceasedData.name} ${deceasedData.surname}</div>
+<div class="tombstone-birth">Born: </br>${deceasedData.birthDate}</div>
+<div class="tombstone-death">${pronoun} died on: </br> ${deceasedData.deathDate}</div>
+`;
 
         tombstoneWrapper.appendChild(tombstoneImg);
         tombstoneWrapper.appendChild(textOverlay);
