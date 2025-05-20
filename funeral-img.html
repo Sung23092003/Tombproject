@@ -37,11 +37,13 @@
           </div>
 
           <nav class="navbar__center">
-            <a href="./home.html" class="navbar__link navbar__link--active">GATE</a>
+            <a href="./home.html" class="navbar__link navbar__link--active"
+              >GATE</a
+            >
             <span class="navbar__divider">|</span>
-         <a href="./board.html" class="navbar__link">BOARD</a>
+            <a href="./board.html" class="navbar__link">BOARD</a>
             <span class="navbar__divider">|</span>
-              <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
+            <a href="./cemetery.html" class="navbar__link">CEMETERY</a>
             <span class="navbar__divider">|</span>
             <a href="./catocombs.html" class="navbar__link">CATACOMBS</a>
           </nav>
@@ -211,76 +213,81 @@
   </body>
   <script>
     // Hàm chuyển file thành Base64
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result); // Base64 kết quả
-    reader.onerror = reject;
-    reader.readAsDataURL(file); // Đọc file dưới dạng DataURL (base64)
-  });
-}
-
-// PORTRAIT
-const portraitBox = document.getElementById("portraitUploadBox");
-const portraitInput = document.getElementById("portraitInput");
-
-// GALLERY
-const galleryBoxes = document.querySelectorAll(".upload-box");
-const galleryInput = document.querySelector(".galleryInput");
-
-let portraitImage = null;
-let galleryImages = [];
-
-// Lưu ảnh portrait
-portraitBox.addEventListener("click", () => {
-  portraitInput.click();
-});
-
-portraitInput.addEventListener("change", async (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    portraitImage = await fileToBase64(file); // <-- chuyển sang base64
-    portraitBox.innerHTML = `<p>${file.name}</p>`;
-  }
-});
-
-// Lưu ảnh gallery
-galleryBoxes.forEach((box, index) => {
-  box.addEventListener("click", () => {
-    galleryInput.click();
-    galleryInput.setAttribute("data-target", index);
-  });
-});
-
-galleryInput.addEventListener("change", async (e) => {
-  const files = e.target.files;
-  const targetIndex = galleryInput.getAttribute("data-target");
-  if (files.length && targetIndex !== null) {
-    const base64 = await fileToBase64(files[0]); // <-- chuyển sang base64
-    galleryImages[targetIndex] = base64;
-    const box = galleryBoxes[targetIndex];
-    box.innerHTML = `<p>${files[0].name}</p>`;
-  }
-});
-
-// Khi nhấn Next
-const nextBtn = document.getElementById("nextBtn");
-nextBtn.addEventListener("click", () => {
-  if (portraitImage || galleryImages.length) {
-    if (portraitImage) {
-      localStorage.setItem("portraitImage", portraitImage);
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result); // Base64 kết quả
+        reader.onerror = reject;
+        reader.readAsDataURL(file); // Đọc file dưới dạng DataURL (base64)
+      });
     }
-    if (galleryImages.length) {
-      localStorage.setItem("galleryImages", JSON.stringify(galleryImages));
-    }
-  } else {
-    localStorage.removeItem("portraitImage");
-    localStorage.removeItem("galleryImages");
-  }
 
-  window.location.href = "./Memory.html";
-});
+    // PORTRAIT
+    const portraitBox = document.getElementById("portraitUploadBox");
+    const portraitInput = document.getElementById("portraitInput");
 
+    // GALLERY
+    const galleryBoxes = document.querySelectorAll(".upload-box");
+    const galleryInput = document.querySelector(".galleryInput");
+
+    let portraitImage = null;
+    let galleryImages = [];
+
+    // Lưu ảnh portrait
+    portraitBox.addEventListener("click", () => {
+      portraitInput.click();
+    });
+
+    portraitInput.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        try {
+          const base64 = await fileToBase64(file);
+          localStorage.setItem("portraitImage", base64);
+          portraitImage = base64;
+          console.log("Ảnh chân dung đã lưu vào localStorage");
+        } catch (err) {
+          console.error("Lỗi khi đọc file:", err);
+        }
+      }
+    });
+
+    // Lưu ảnh gallery
+    galleryBoxes.forEach((box, index) => {
+      box.addEventListener("click", () => {
+        galleryInput.click();
+        galleryInput.setAttribute("data-target", index);
+      });
+    });
+
+    galleryInput.addEventListener("change", async (e) => {
+      const files = e.target.files;
+      const targetIndex = galleryInput.getAttribute("data-target");
+      if (files.length && targetIndex !== null) {
+        const base64 = await fileToBase64(files[0]); // <-- chuyển sang base64
+        galleryImages[targetIndex] = base64;
+        const box = galleryBoxes[targetIndex];
+        box.innerHTML = `<p>${files[0].name}</p>`;
+      }
+    });
+
+    // Khi nhấn Next
+    const nextBtn = document.getElementById("nextBtn");
+    nextBtn.addEventListener("click", () => {
+      if (portraitImage || galleryImages.length) {
+        if (portraitImage) {
+          localStorage.setItem("portraitImage", portraitImage);
+        }
+        if (galleryImages.length) {
+          localStorage.setItem("galleryImages", JSON.stringify(galleryImages));
+        }
+      } else {
+        localStorage.removeItem("portraitImage");
+        localStorage.removeItem("galleryImages");
+      }
+
+      window.location.href = "./Memory.html";
+    });
   </script>
 
   <script src="./assets/scripts/footer.js"></script>
