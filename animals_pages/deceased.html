@@ -321,6 +321,13 @@
         if (!name || !other || !birthDate || !deathDate || !gender) {
           return false;
         }
+
+        const nameErrorMsg = validateName(name);
+        if (nameErrorMsg) {
+          alert(nameErrorMsg);
+          return false;
+        }
+
         return true;
       }
 

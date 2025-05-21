@@ -272,8 +272,8 @@
 
     function validateSurname(value) {
       const words = value.trim().split(/\s+/);
-      if (words.length > 2) {
-        return "Surname must be at most two words.";
+      if (words.length > 1) {
+        return "Surname must be at most one words.";
       }
       for (const word of words) {
         if (word.length > 8) {
@@ -370,6 +370,14 @@
       if (!name || !surname || !other || !birthDate || !deathDate || !gender) {
         return false;
       }
+
+      const nameErrorMsg = validateName(name);
+      const surnameErrorMsg = validateSurname(surname);
+      if (nameErrorMsg || surnameErrorMsg) {
+        alert(nameErrorMsg || surnameErrorMsg);
+        return false;
+      }
+
       return true;
     }
 
