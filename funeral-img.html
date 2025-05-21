@@ -245,7 +245,8 @@
           const base64 = await fileToBase64(file);
           localStorage.setItem("portraitImage", base64);
           portraitImage = base64;
-          console.log("Ảnh chân dung đã lưu vào localStorage");
+          // Hiển thị ảnh luôn
+          portraitBox.innerHTML = `<img src="${base64}" alt="Portrait" style="width: 100%; height: auto; border-radius: 8px;" />`;
         } catch (err) {
           console.error("Lỗi khi đọc file:", err);
         }
@@ -264,22 +265,35 @@
       const files = e.target.files;
       const targetIndex = galleryInput.getAttribute("data-target");
       if (files.length && targetIndex !== null) {
-        const base64 = await fileToBase64(files[0]); // <-- chuyển sang base64
+        const base64 = await fileToBase64(files[0]);
         galleryImages[targetIndex] = base64;
+
         const box = galleryBoxes[targetIndex];
-        box.innerHTML = `<p>${files[0].name}</p>`;
+        box.innerHTML = `<img src="${base64}" alt="Gallery Image" style="width: 100%; height: auto; border-radius: 8px;" />`;
       }
     });
 
     // Khi nhấn Next
     const nextBtn = document.getElementById("nextBtn");
     nextBtn.addEventListener("click", () => {
-      if (portraitImage || galleryImages.length) {
-        if (portraitImage) {
+      const hasPortrait = !!portraitImage;
+      const validGalleryImages = galleryImages.filter(Boolean);
+      const hasGallery = validGalleryImages.length > 0;
+
+      if (hasPortrait || hasGallery) {
+        if (hasPortrait) {
           localStorage.setItem("portraitImage", portraitImage);
+        } else {
+          localStorage.removeItem("portraitImage");
         }
-        if (galleryImages.length) {
-          localStorage.setItem("galleryImages", JSON.stringify(galleryImages));
+
+        if (hasGallery) {
+          localStorage.setItem(
+            "galleryImages",
+            JSON.stringify(validGalleryImages)
+          );
+        } else {
+          localStorage.removeItem("galleryImages");
         }
       } else {
         localStorage.removeItem("portraitImage");

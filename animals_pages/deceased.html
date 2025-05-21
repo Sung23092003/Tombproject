@@ -112,7 +112,7 @@
         <div class="flex render w-full">
           <!-- img render ở đây -->
           <section class="form-section mt-32">
-            <h2 class="form-section__title">Data of the deceased person</h2>
+            <h2 class="form-section__title">Details of the deceased animal</h2>
             <form class="form">
               <div class="input-icon form-group">
                 <i class="fa-solid fa-user"></i>
@@ -123,6 +123,7 @@
                   placeholder="Name*"
                   required
                 />
+                <div id="nameError" class="error-message"></div>
               </div>
 
               <div class="input-icon form-group">
@@ -243,6 +244,23 @@
       const nextBtn = document.getElementById("nextBtn");
 
       const selectedImg = localStorage.getItem("selectedTombstone");
+
+      function validateName(value) {
+        const words = value.trim().split(/\s+/);
+        if (words.length > 1) {
+          return "Name must be only one word.";
+        }
+        if (words[0]?.length > 8) {
+          return "Name cannot be more than 8 characters.";
+        }
+        return "";
+      }
+
+      nameInput.addEventListener("input", () => {
+        const msg = validateName(nameInput.value);
+        nameError.textContent = msg;
+        nameInput.classList.toggle("input-error", msg !== "");
+      });
 
       if (selectedImg) {
         const imgPreview = document.createElement("div");
